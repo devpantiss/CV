@@ -1,0 +1,12 @@
+{
+  "adminLogin": "passed: owner signed in and admin collection loaded",
+  "eventRegistrants": "passed: exactly one fictional student visible under matching event",
+  "eventSheetSync": "failed: deployed handler reports Google Drive authorization needs reconnecting",
+  "podcastUnsafeUrl": "passed: javascript URL rejected in editor",
+  "podcastCreatePublish": "passed: authenticated save, public normalized YouTube URL, target _blank",
+  "podcastEditUnpublish": "passed: edited description persisted, unpublished podcast absent on public gallery",
+  "contactInbox": "passed: one saved query visible, formula-like text displayed literally, pending sync retained",
+  "contactBrowserSubmission": "passed: public form saved without a login and showed confirmation",
+  "eventBrowserSubmission": "passed: public registration modal confirmed existing email retry without an account",
+  "querySheetSync": "failed before renewal: admin UI showed reconnect Google authorization message"
+}

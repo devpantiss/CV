@@ -1,3 +1,4 @@
+import HeroMedia from '../../components/ui/HeroMedia';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { GrWorkshop } from "react-icons/gr";
@@ -5,7 +6,6 @@ import { TfiWrite } from "react-icons/tfi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { PiStudent } from "react-icons/pi";
 import { LiaUniversitySolid } from "react-icons/lia";
-import { TypeAnimation } from 'react-type-animation';
 import { FaLaptopCode, FaCogs, FaProjectDiagram, FaMicrochip, FaTools, FaBroadcastTower, FaBriefcase } from "react-icons/fa";
 
 const examData = [
@@ -73,55 +73,35 @@ const featuredCollege = [
 
 
 const streams = [
-  { name: "Computer Science and Engineering", icon: <FaLaptopCode className="text-4xl text-[#235950]" /> },
-  { name: "Mechanical Engineering", icon: <FaCogs className="text-4xl text-[#235950]" /> },
-  { name: "Civil Engineering", icon: <FaProjectDiagram className="text-4xl text-[#235950]" /> },
-  { name: "Electronics and Communication Engineering", icon: <FaMicrochip className="text-4xl text-[#235950]" /> },
-  { name: "Electrical Engineering", icon: <FaTools className="text-4xl text-[#235950]" /> },
-  { name: "Telecommunications Engineering", icon: <FaBroadcastTower className="text-4xl text-[#235950]" /> }
+  { name: "Computer Science and Engineering", icon: <FaLaptopCode className="text-4xl text-[var(--color-primary)]" /> },
+  { name: "Mechanical Engineering", icon: <FaCogs className="text-4xl text-[var(--color-primary)]" /> },
+  { name: "Civil Engineering", icon: <FaProjectDiagram className="text-4xl text-[var(--color-primary)]" /> },
+  { name: "Electronics and Communication Engineering", icon: <FaMicrochip className="text-4xl text-[var(--color-primary)]" /> },
+  { name: "Electrical Engineering", icon: <FaTools className="text-4xl text-[var(--color-primary)]" /> },
+  { name: "Telecommunications Engineering", icon: <FaBroadcastTower className="text-4xl text-[var(--color-primary)]" /> }
 ];
 
 const MtechPage = () => {
   return (
     <div className="btech-page-container">
-      <div className="hero-section bg-gradient-to-b lg:bg-gradient-to-br from-[#426e66] via-[#093029] to-[#0f312c] text-white pt-64 lg:pt-40 pb-20 px-6">
+      <div className="hero-section course-editorial-hero bg-gradient-to-b lg:bg-gradient-to-br from-[var(--color-primary-soft)] via-[var(--color-background)] to-[var(--color-accent-soft)] text-[var(--color-foreground)] pt-64 lg:pt-40 pb-20 px-6">
+        <HeroMedia image="/media/pathways/engineering.jpg" />
+        <nav className="hero-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/explorecity">Courses & colleges</a><span aria-hidden="true">/</span><span>Course guide</span></nav>
+        <p className="course-hero-kicker">Explore your next chapter</p>
         <div className="container mx-auto flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
-            <TypeAnimation
-              sequence={[
-                "Master of Technology",
-                1000,
-                "(M.Tech)",
-                1000,
-              ]}
-              speed={50}
-              className="inline-block text-5xl font-bold drop-shadow-lg"
-              wrapper="span"
-              repeat={Infinity}
-            />
+            <h1 className="text-5xl font-bold">Master of Technology</h1>
             <br />
-            <TypeAnimation
-              sequence={[
-                "Empowering Innovators with the Knowledge to Transform the Future through Science.",
-                2000,
-                "Empowering Innovators with the Knowledge to Transform the Future through Science.",
-              ]}
-              speed={50}
-              className="inline-block text-lg drop-shadow-lg mt-4"
-              wrapper="span"
-              repeat={Infinity}
-            />
+            <p className="text-lg mt-4">Empowering Innovators with the Knowledge to Transform the Future through Science.</p>
           </div>
-          <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <img src="https://res.cloudinary.com/du3i8e0se/image/upload/v1722202937/Tech_2-removebg-preview_sn6kb9.png" alt="B.Tech Illustration" className="rounded-lg floating w-[400px]" />
-          </div>
+          
         </div>
       </div>
 
       <main className="container mx-auto pb-12 pt-12 lg:pt-24 px-6">
         <section id="course-details" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center"><PiStudent className="mr-2"/> Course Details</h2>
-          <ul className="custom-list list-inside bg-gray-100 p-6 rounded-lg shadow-sm text-lg leading-relaxed">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center"><PiStudent className="mr-2"/> Course Details</h2>
+          <ul className="custom-list list-inside bg-[var(--color-surface-muted)] p-6 rounded-lg shadow-sm text-lg leading-relaxed">
             <li>M.Tech (Master of Technology) is a two-year postgraduate program.</li>
             <li>Focuses on advanced studies in engineering and technology.</li>
             <li>Provides specialization in various disciplines such as computer science, electrical engineering, mechanical engineering, civil engineering, and electronics and communication engineering.</li>
@@ -129,20 +109,20 @@ const MtechPage = () => {
         </section>
 
         <section id="streams" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center"><FaLaptopCode className="mr-2"/> Associated Streams</h2>
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center"><FaLaptopCode className="mr-2"/> Associated Streams</h2>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {streams.map((stream, index) => (
-              <div key={index} className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6">
+              <div key={index} className="flex flex-col items-center text-center bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {stream.icon}
-                <h4 className="text-lg font-bold mt-4 text-[#235950]">{stream.name}</h4>
+                <h4 className="text-lg font-bold mt-4 text-[var(--color-primary)]">{stream.name}</h4>
               </div>
             ))}
           </div>
         </section>
 
         <section id="eligibility-criteria" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center"><IoMdCheckmarkCircleOutline className="mr-2"/> Eligibility Criteria</h2>
-          <ul className="custom-list list-inside bg-gray-100 p-6 rounded-lg shadow-sm text-lg leading-relaxed">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center"><IoMdCheckmarkCircleOutline className="mr-2"/> Eligibility Criteria</h2>
+          <ul className="custom-list list-inside bg-[var(--color-surface-muted)] p-6 rounded-lg shadow-sm text-lg leading-relaxed">
             <li>Eligibility criteria vary depending on the college and specific program.</li>
             <li>Most colleges require candidates to have completed their B.Tech/B.E or equivalent examination with a minimum of 60% marks.</li>
             <li>Some colleges may also require candidates to have a valid score in an entrance exam such as GATE.</li>
@@ -150,19 +130,19 @@ const MtechPage = () => {
         </section>
 
         <section id="top-exams" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center"><TfiWrite className="mr-2"/> Top Exams</h2>
-          <div className="overflow-x-auto bg-white shadow-md rounded-lg">
-            <table className="w-full text-sm text-left text-gray-700">
-              <thead className="text-xs uppercase bg-gray-200 text-gray-600">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center"><TfiWrite className="mr-2"/> Top Exams</h2>
+          <div className="overflow-x-auto bg-[var(--color-surface)] shadow-md rounded-lg">
+            <table className="w-full text-sm text-left text-[var(--color-foreground)]">
+              <thead className="text-xs uppercase bg-[var(--color-primary-soft)] text-[var(--color-muted)]">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-[#235950]">Exam Name</th>
-                  <th scope="col" className="px-6 py-3 text-[#235950]">Exam Dates</th>
+                  <th scope="col" className="px-6 py-3 text-[var(--color-primary)]">Exam Name</th>
+                  <th scope="col" className="px-6 py-3 text-[var(--color-primary)]">Exam Dates</th>
                 </tr>
               </thead>
               <tbody>
                 {examData.map((exam, index) => (
-                  <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'} border-t border-gray-200`}>
-                    <td className="px-6 py-4"><Link to={exam.siteUrl} className='hover:text-black text-[#235950]'>{exam.exam}</Link></td>
+                  <tr key={index} className={`${index % 2 === 0 ? 'bg-[var(--color-surface-muted)]' : 'bg-[var(--color-surface)]'} border-t border-[var(--color-border)]`}>
+                    <td className="px-6 py-4"><Link to={exam.siteUrl} className='hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]'>{exam.exam}</Link></td>
                     <td className="px-6 py-4">
                       <ul>
                         {exam.examDates.map((session, idx) => (
@@ -178,10 +158,10 @@ const MtechPage = () => {
         </section>
 
         <section id="placement-details" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center">
           <FaBriefcase className="mr-2" /> Career Prospects
           </h2>
-          <ul className="custom-list list-inside bg-gray-100 p-6 rounded-lg shadow-sm text-lg leading-relaxed">
+          <ul className="custom-list list-inside bg-[var(--color-surface-muted)] p-6 rounded-lg shadow-sm text-lg leading-relaxed">
             <li>Eligibility criteria must be met before applying to any M.Tech placement, on- or off-campus.</li>
             <li>Some companies evaluate applicants based on basic skills and academic performance.</li>
             <li>Top recruiters have specific eligibility criteria for applicants.</li>
@@ -189,15 +169,15 @@ const MtechPage = () => {
         </section>
 
         <section id="top-colleges" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center"><LiaUniversitySolid className="mr-2"/> Top Colleges</h2>
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center"><LiaUniversitySolid className="mr-2"/> Top Colleges</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#235950]">Government Colleges</h3>
-              <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--color-primary)]">Government Colleges</h3>
+              <div className="bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {government.map((college, index) => (
-                  <div key={index} className={`mb-4 ${index < government.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
-                    <h4 className="text-lg font-bold"><Link to={college.siteUrl} className='hover:text-black text-[#235950]'>{college.name}</Link></h4>
+                  <div key={index} className={`mb-4 ${index < government.length - 1 ? 'border-b border-[var(--color-border)] pb-4' : ''}`}>
+                    <h4 className="text-lg font-bold"><Link to={college.siteUrl} className='hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]'>{college.name}</Link></h4>
                     <p>{college.location}</p>
                     <p>Rank: {college.rank}</p>
                   </div>
@@ -206,11 +186,11 @@ const MtechPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#235950]">Private Colleges</h3>
-              <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--color-primary)]">Private Colleges</h3>
+              <div className="bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {privateCollege.map((college, index) => (
-                  <div key={index} className={`mb-4 ${index < privateCollege.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
-                    <h4 className="text-lg font-bold"><Link to={college.siteUrl} className='hover:text-black text-[#235950]'>{college.name}</Link></h4>
+                  <div key={index} className={`mb-4 ${index < privateCollege.length - 1 ? 'border-b border-[var(--color-border)] pb-4' : ''}`}>
+                    <h4 className="text-lg font-bold"><Link to={college.siteUrl} className='hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]'>{college.name}</Link></h4>
                     <p>{college.location}</p>
                     <p>Rank: {college.rank}</p>
                   </div>
@@ -219,11 +199,11 @@ const MtechPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#235950]">Featured Colleges</h3>
-              <div className="bg-white shadow-md rounded-lg p-6">
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--color-primary)]">Featured Colleges</h3>
+              <div className="bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {featuredCollege.map((college, index) => (
-                  <div key={index} className={`mb-4 ${index < featuredCollege.length - 1 ? 'border-b border-gray-200 pb-4' : ''}`}>
-                    <h4 className="text-lg font-bold"><Link to={college.siteUrl} className='hover:text-black text-[#235950]'>{college.name}</Link></h4>
+                  <div key={index} className={`mb-4 ${index < featuredCollege.length - 1 ? 'border-b border-[var(--color-border)] pb-4' : ''}`}>
+                    <h4 className="text-lg font-bold"><Link to={college.siteUrl} className='hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]'>{college.name}</Link></h4>
                     <p>{college.location}</p>
                   </div>
                 ))}
@@ -242,7 +222,7 @@ const MtechPage = () => {
           position: absolute;
           left: 0;
           top: -5px;
-          color: #235950; 
+          color: var(--color-primary);
           font-size: 1.2em;
           font-weight: 800; 
         }

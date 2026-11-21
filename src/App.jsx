@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 
+const AdminPage = lazy(() => import('./pages/admin/AdminPage'));
 const HomePage = lazy(() => import('./pages/HomePage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const TeamPage = lazy(() => import('./pages/TeamPage'));
@@ -28,7 +29,7 @@ const pageMeta = {
 
 const App = () => {
   const { pathname } = useLocation();
-  const isAuthPage = pathname.startsWith('/auth');
+  const isAuthPage = pathname.startsWith('/auth') || pathname.startsWith('/admin');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -46,6 +47,7 @@ const App = () => {
       <main id="main-content">
         <Suspense fallback={<div className="grid min-h-[60vh] place-items-center" role="status"><span className="h-10 w-10 animate-spin rounded-full border-4 border-[var(--color-primary-soft)] border-t-[var(--color-primary)]"><span className="sr-only">Loading page</span></span></div>}>
           <Routes>
+            <Route path="/admin/*" element={<AdminPage />} />
             <Route path="/" element={<HomePage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact_us" element={<ContactPage />} />

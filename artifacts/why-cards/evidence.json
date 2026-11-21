@@ -1,0 +1,19 @@
+{
+  "contract": "contract.md: match the supplied four-card reference using compact numbered panels, a taller expanded panel, existing light theme, hover/focus/tap controls and existing actions.",
+  "targetViewports": ["1440x900", "1024x900", "390x844"],
+  "accessibility": {"status":"pass","evidence":"Verified labelled disclosure buttons, accurate aria-expanded and aria-controls targets, keyboard Tab expansion, visible 3px focus, hidden inactive links, modal Escape, and successful UG navigation. Decorative numbers and illustrations are hidden from assistive technology. CSS explicitly removes transitions for reduced motion."},
+  "responsive": {"status":"pass","evidence":"Browser measurements at 1440, 1024 and 390 CSS pixels show no horizontal document overflow. Four horizontal cards at desktop/tablet widths, stacked tap disclosures on mobile. Checked all title/body fit at 1024px; no clipping or page errors. Results recorded in results.json."},
+  "contentStates": {
+    "loading":{"status":"not-applicable","reason":"Static benefit content has no data-loading state. Local WebP illustrations reserve a fixed art area while loading."},
+    "empty":{"status":"not-applicable","reason":"All four benefits are bundled static content; the section has no empty dataset."},
+    "error":{"status":"not-applicable","reason":"No new API requests or form submissions. Existing destination and consultation actions are retained."},
+    "partial":{"status":"not-applicable","reason":"The full benefit dataset is local and always present. All four local image assets were loaded during browser checks."},
+    "success":{"status":"pass","evidence":"Second card initially expands; hovering the first card, tabbing to the second, and tapping mobile controls update the selected panel. Consultation opens and Escape closes it. UG link navigates to /colleges/ug."},
+    "permission":{"status":"not-applicable","reason":"The section introduces no protected operation or permission request."}
+  },
+  "renderedEvidence": [
+    {"viewport":"1440x900","artifact":"after-1440.png","observation":"Four numbered white panels with second card expanded, local illustration, readable copy and action. Isolated section capture temporarily hides fixed navigation and skip link for unobstructed review."},
+    {"viewport":"1024x900","artifact":"after-1024.png","observation":"Compact desktop composition fits all four cards and the heading/action without clipping."},
+    {"viewport":"390x844","artifact":"after-390.png","observation":"Stacked mobile disclosures with visible plus controls, readable expanded card and touch action. Fixed navigation and skip link temporarily hidden in isolated section capture."}
+  ]
+}

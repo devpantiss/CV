@@ -1,0 +1,20 @@
+# Gateway verification is disabled because these handlers enforce their own access.
+# drive-upload verifies the user's JWT with auth.getUser AND the admin allowlist.
+# drive-media verifies an HMAC capability URL before reading any Drive file.
+[functions.drive-upload]
+verify_jwt = false
+
+[functions.drive-media]
+verify_jwt = false
+
+# Direct public event form; sync action independently verifies admin JWT + allowlist.
+[functions.event-registration]
+verify_jwt = false
+
+# Public visitor queries; sync action checks admin identity and allowlist.
+[functions.contact-query]
+verify_jwt = false
+
+# SMTP confirmations and pass previews require an admin JWT plus allowlist check.
+[functions.event-confirmation]
+verify_jwt = false

@@ -1,0 +1,607 @@
+[
+  {
+    "route": "/",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Career Valley | Career & College Guidance",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Discover your dream career."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "hero-logo-track",
+        "left": 147,
+        "right": 2353
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1400,
+        "right": 1633
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 1413,
+        "right": 1620
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1645,
+        "right": 1777
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 1687,
+        "right": 1734
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1789,
+        "right": 1921
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 1821,
+        "right": 1889
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1933,
+        "right": 2065
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 2077,
+        "right": 2209
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 2221,
+        "right": 2353
+      },
+      {
+        "tag": "DIV",
+        "className": "pdg-mobile-card",
+        "left": 1372,
+        "right": 1902
+      },
+      {
+        "tag": "DIV",
+        "className": "pdg-mobile-image",
+        "left": 1373,
+        "right": 1901
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 1373,
+        "right": 1901
+      },
+      {
+        "tag": "SPAN",
+        "className": "pdg-mobile-shade",
+        "left": 1373,
+        "right": 1901
+      },
+      {
+        "tag": "SPAN",
+        "className": "pdg-mobile-topline",
+        "left": 1386,
+        "right": 1887
+      }
+    ],
+    "errors": [],
+    "screenshot": "home-1440.png",
+    "consultation": {
+      "opens": true,
+      "closeButtonVisible": true,
+      "escapeCloses": true
+    }
+  },
+  {
+    "route": "/about",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "About Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Guidance built around the person—not just the programme."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "about-1440.png"
+  },
+  {
+    "route": "/services",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Career Guidance Services | Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Support for the decisions that shape what comes next."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "services-1440.png"
+  },
+  {
+    "route": "/contact_us",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Talk to a Career Counsellor | Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Bring us the question you’re trying to answer."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "contact_us-1440.png"
+  },
+  {
+    "route": "/events",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Student Events | Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Meet people, ask better questions and explore what’s possible."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "events-1440.png"
+  },
+  {
+    "route": "/colleges/ug",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Undergraduate options, city by city."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "colleges-ug-1440.png"
+  },
+  {
+    "route": "/explorecity",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "College options."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "explorecity-1440.png"
+  },
+  {
+    "route": "/courses/btech",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "courses-btech-1440.png"
+  },
+  {
+    "route": "/auth/login",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 1440,
+    "viewportWidth": 1440,
+    "h1": [
+      "Keep your guidance journey in one place.",
+      "Login"
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "auth-login-1440.png"
+  },
+  {
+    "route": "/",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Career Valley | Career & College Guidance",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Discover your dream career."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "hero-logo-track",
+        "left": 27,
+        "right": 2233
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 171,
+        "right": 404
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 416,
+        "right": 548
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 459,
+        "right": 505
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 560,
+        "right": 692
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 592,
+        "right": 660
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 704,
+        "right": 836
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 848,
+        "right": 980
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 992,
+        "right": 1124
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1136,
+        "right": 1268
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1280,
+        "right": 1513
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 1293,
+        "right": 1500
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1525,
+        "right": 1657
+      },
+      {
+        "tag": "IMG",
+        "className": "",
+        "left": 1567,
+        "right": 1614
+      },
+      {
+        "tag": "SPAN",
+        "className": "hero-logo",
+        "left": 1669,
+        "right": 1801
+      }
+    ],
+    "errors": [],
+    "screenshot": "home-390.png",
+    "consultation": {
+      "opens": true,
+      "closeButtonVisible": true,
+      "escapeCloses": true
+    }
+  },
+  {
+    "route": "/about",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "About Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Guidance built around the person—not just the programme."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "page-hero-glow",
+        "left": -233,
+        "right": 343
+      }
+    ],
+    "errors": [],
+    "screenshot": "about-390.png"
+  },
+  {
+    "route": "/services",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Career Guidance Services | Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Support for the decisions that shape what comes next."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "page-hero-glow",
+        "left": -233,
+        "right": 343
+      }
+    ],
+    "errors": [],
+    "screenshot": "services-390.png"
+  },
+  {
+    "route": "/contact_us",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Talk to a Career Counsellor | Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Bring us the question you’re trying to answer."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "page-hero-glow",
+        "left": -233,
+        "right": 343
+      }
+    ],
+    "errors": [],
+    "screenshot": "contact_us-390.png"
+  },
+  {
+    "route": "/events",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Student Events | Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Meet people, ask better questions and explore what’s possible."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "page-hero-glow",
+        "left": -233,
+        "right": 343
+      }
+    ],
+    "errors": [],
+    "screenshot": "events-390.png"
+  },
+  {
+    "route": "/colleges/ug",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Undergraduate options, city by city."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "page-hero-glow",
+        "left": -233,
+        "right": 343
+      }
+    ],
+    "errors": [],
+    "screenshot": "colleges-ug-390.png"
+  },
+  {
+    "route": "/explorecity",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "College options."
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "DIV",
+        "className": "page-hero-glow",
+        "left": -233,
+        "right": 343
+      }
+    ],
+    "errors": [],
+    "screenshot": "explorecity-390.png"
+  },
+  {
+    "route": "/courses/btech",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [
+      {
+        "tag": "NAV",
+        "className": "flex gap-1",
+        "left": 187,
+        "right": 760
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 323,
+        "right": 393
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 397,
+        "right": 452
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 456,
+        "right": 513
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 517,
+        "right": 564
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 568,
+        "right": 626
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 630,
+        "right": 704
+      },
+      {
+        "tag": "A",
+        "className": "shrink-0 rounded-full px-4 py-2 text-xs font-bold transition-colors text-[var(--color-muted)] hover:bg-[var(--color-surface-muted)] hover:te",
+        "left": 708,
+        "right": 760
+      }
+    ],
+    "errors": [],
+    "screenshot": "courses-btech-390.png"
+  },
+  {
+    "route": "/auth/login",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": 200,
+    "title": "Career Valley",
+    "documentWidth": 390,
+    "viewportWidth": 390,
+    "h1": [
+      "Keep your guidance journey in one place.",
+      "Login"
+    ],
+    "background": "rgb(248, 249, 245)",
+    "overflow": [],
+    "errors": [],
+    "screenshot": "auth-login-390.png"
+  }
+]

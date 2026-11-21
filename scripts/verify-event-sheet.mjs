@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+const env=Object.fromEntries((await fs.readFile('.drive-secrets.local','utf8')).trim().split('\n').map(line=>{const i=line.indexOf('=');return[line.slice(0,i),line.slice(i+1)];}));
+const sheetId=process.argv[2];const eventId=process.argv[3];if(!sheetId||!eventId)throw new Error('Pass the disposable sheet ID and event UUID.');
+const response=await fetch('https://oauth2.googleapis.com/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:env.GOOGLE_CLIENT_ID,client_secret:env.GOOGLE_CLIENT_SECRET,refresh_token:env.GOOGLE_REFRESH_TOKEN,grant_type:'refresh_token'})});
+if(!response.ok)throw new Error('Unable to refresh Google authorization.');
+const token=(await response.json()).access_token;const headers={Authorization:`Bearer ${token}`};
+const meta=await fetch(`https://www.googleapis.com/drive/v3/files/${sheetId}?fields=appProperties,parents,permissions(type,role)`,{headers});
+if(!meta.ok)throw new Error('Test sheet not found.');const file=await meta.json();
+if(file.appProperties?.career_valley_event!==eventId||!file.parents?.includes(env.GOOGLE_DRIVE_FOLDER_ID))throw new Error('Refusing to change a sheet outside this test event.');
+const read=await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/A1:I10`,{headers});if(!read.ok)throw new Error('Unable to read synced sheet.');
+const rows=(await read.json()).values;const emails=rows.slice(1).map(row=>row[3]);
+const report={headersMatch:rows[0][0]==='Registration ID',registrations:rows.length-1,initialRegistration:emails.includes('registration-test@example.test'),backgroundRegistration:emails.includes('background-test@example.test'),private:!file.permissions?.some(p=>p.type==='anyone'||p.type==='domain')};
+if(!report.initialRegistration||!report.backgroundRegistration||report.registrations!==2||!report.private)throw new Error('Synced sheet verification failed.');
+const cleanup=await fetch(`https://www.googleapis.com/drive/v3/files/${sheetId}`,{method:'PATCH',headers:{...headers,'Content-Type':'application/json'},body:JSON.stringify({trashed:true})});report.testSheetMovedToTrash=cleanup.ok;
+await fs.writeFile('artifacts/event-registration/event-sheet-check.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));if(!cleanup.ok)process.exitCode=1;

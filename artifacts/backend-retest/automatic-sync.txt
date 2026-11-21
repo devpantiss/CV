@@ -1,0 +1,1 @@
+Two registrations saved; both sheets_synced_at timestamps set. New submission returned HTTP 200 without manual sync.

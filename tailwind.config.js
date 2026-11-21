@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
      "./index.html",
      "./src/**/*.{js,ts,jsx,tsx}",
@@ -55,9 +56,9 @@ module.exports = {
         'marquee': 'marquee 10s linear infinite',
        },
        colors: {
-        'primary-dark': '#000000',
-        'primary-light': '#2A675C',
-        'secondary-light': '#9fffed',
+        'primary-dark': 'var(--color-foreground)',
+        'primary-light': 'var(--color-primary)',
+        'secondary-light': 'var(--color-primary-soft)',
       },
      }
   },

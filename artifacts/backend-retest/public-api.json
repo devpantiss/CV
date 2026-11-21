@@ -1,0 +1,159 @@
+{
+  "checkedAt": "2026-11-20T12:20:05.760Z",
+  "eventId": "2848a8e8-23a2-4298-bc5a-6e15faac1388",
+  "pastId": "90c39ca3-1ee1-44a9-b7aa-b527ad37935f",
+  "draftId": "68933cab-ac16-482d-99ba-34d07ded53a1",
+  "submissionId": "2b066cdc-990e-4312-b184-3e44d412ac0b",
+  "checks": [
+    {
+      "name": "published content readable",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "anonymous is not admin",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "anonymous denied event_registrations",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous denied event_registration_sheets",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous denied contact_queries",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous denied contact_query_sheet",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "draft hidden",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "anonymous content insert denied",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous PATCH denied",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "anonymous DELETE denied",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "wrong password rejected",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "event-registration anonymous sync denied",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "contact-query anonymous sync denied",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "anonymous media upload denied",
+      "pass": true,
+      "status": 401
+    },
+    {
+      "name": "invalid signed media URL denied",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "unapproved origin denied",
+      "pass": true,
+      "status": 403
+    },
+    {
+      "name": "event invalid email",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "event missing consent",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "event oversize field",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "event registration saved",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "event duplicate retry accepted",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "past event registration rejected",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "draft event registration rejected",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "contact invalid topic",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "contact missing consent",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "contact invalid email",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "contact query saved",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "contact duplicate retry accepted",
+      "pass": true,
+      "status": 200
+    },
+    {
+      "name": "oversized request rejected",
+      "pass": true,
+      "status": 400
+    },
+    {
+      "name": "existing Drive image delivery",
+      "pass": false,
+      "status": 503
+    }
+  ]
+}

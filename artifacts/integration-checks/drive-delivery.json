@@ -1,0 +1,14 @@
+{
+  "driveUpload": true,
+  "mediaGetStatus": 200,
+  "imageMimeType": true,
+  "bytesMatch": true,
+  "rangeStatus": 206,
+  "rangeMatches": true,
+  "contentRange": "bytes 0-9/68",
+  "headStatus": 200,
+  "headBodyEmpty": true,
+  "invalidSignatureStatus": 403,
+  "passed": true,
+  "testFileMovedToTrash": true
+}

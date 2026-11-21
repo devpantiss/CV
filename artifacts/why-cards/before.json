@@ -1,0 +1,28 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "layout": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "sectionWidth": 1440,
+      "heading": "Guidance that moves with you."
+    }
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": [],
+    "layout": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "sectionWidth": 390,
+      "heading": "Guidance that moves with you."
+    }
+  }
+]

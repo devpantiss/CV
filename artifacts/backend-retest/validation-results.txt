@@ -1,0 +1,2 @@
+checks
+[{"test":"database_rejects_unsafe_partner_url","passed":true},{"test":"database_rejects_missing_team_fields","passed":true},{"test":"database_rejects_invalid_order","passed":true},{"test":"valid_podcast_database_save","passed":true},{"test":"rate_limit_ten_allowed_eleventh_denied","passed":true}]

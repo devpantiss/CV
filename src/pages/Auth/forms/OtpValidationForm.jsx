@@ -54,7 +54,7 @@ const OtpValidationForm = () => {
       <div className="flex space-x-2">
         {otp.map((data, index) => (
           <input
-            className="w-10 h-10 text-center text-xl border border-gray-300 rounded focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-10 h-10 text-center text-xl border border-[var(--color-border)] rounded focus:border-[var(--color-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)]"
             type="text"
             inputMode="numeric"
             autoComplete={index === 0 ? 'one-time-code' : 'off'}
@@ -70,11 +70,11 @@ const OtpValidationForm = () => {
           />
         ))}
       </div>
-      <p className="text-center text-sm text-gray-600">OTP Entered: {otp.join('')}</p>
-      {verificationError && <p className="text-center text-red-500">{verificationError}</p>}
+      <p className="text-center text-sm text-[var(--color-muted)]">OTP Entered: {otp.join('')}</p>
+      {verificationError && <p className="text-center text-[var(--color-error)]">{verificationError}</p>}
       <button
         type="submit"
-        className={`bg-[#235950] w-[200px] font-dosis hover:bg-[#063930] text-white font-bold py-2 px-4 rounded ${verificationLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        className={`bg-[var(--color-primary)] w-[200px] font-dosis hover:bg-[var(--color-primary-strong)] text-[var(--color-on-primary)] font-bold py-2 px-4 rounded ${verificationLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
         disabled={verificationLoading}
       >
         {verificationLoading ? 'Verifying...' : 'Submit'}

@@ -37,7 +37,7 @@ const SignupForm = () => {
   return (
     <div>
       {loading && <Loader />}
-      <h1 className="text-center mb-3 text-2xl font-bold text-[#1e584e]">
+      <h1 className="text-center mb-3 text-2xl font-bold text-[var(--color-primary)]">
         Sign Up
       </h1>
       <form
@@ -45,8 +45,8 @@ const SignupForm = () => {
         onSubmit={handleSubmit}
       >
         {/* username */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <FiUser className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiUser className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="text"
             required
@@ -55,13 +55,13 @@ const SignupForm = () => {
             value={formData.name}
             onChange={handleChange}
             placeholder="Full Name."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
 
         {/* number */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <FiPhone className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiPhone className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="tel"
             required
@@ -70,13 +70,13 @@ const SignupForm = () => {
             value={formData.number}
             onChange={handleChange}
             placeholder="Mobile Number."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
 
         {/* email */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <FiMail className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiMail className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="email"
             required
@@ -85,13 +85,13 @@ const SignupForm = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="Email Address."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
 
         {/* password */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <FiKey className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiKey className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="password"
             required
@@ -101,21 +101,21 @@ const SignupForm = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="Enter Your Password."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
 
         {/* gender */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <PiGenderIntersexBold className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <PiGenderIntersexBold className="text-[26px] text-[var(--color-primary)]" />
           <select
             name="gender"
             required
             value={formData.gender}
             onChange={handleChange}
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full text-[#235950] font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full text-[var(--color-primary)] font-anta"
           >
-            <option value="" className="font-anta text-gray-400" disabled>Select Gender</option>
+            <option value="" className="font-anta text-[var(--color-muted)]" disabled>Select Gender</option>
             <option value="male" className="font-anta">Male</option>
             <option value="female" className="font-anta">Female</option>
             <option value="other" className="font-anta">Other</option>
@@ -123,8 +123,8 @@ const SignupForm = () => {
         </label>
 
         {/* city */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <FiMapPin className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiMapPin className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="text"
             required
@@ -133,21 +133,21 @@ const SignupForm = () => {
             value={formData.city}
             onChange={handleChange}
             placeholder="City You Live In."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
 
         {/* state */}
         <label className="flex items-center space-x-2">
-          <FiMap className='text-[#235950] text-[22px]' />
+          <FiMap className='text-[var(--color-primary)] text-[22px]' />
           <select
             name="state"
             required
             value={formData.state}
             onChange={handleChange}
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full text-[#235950] font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full text-[var(--color-primary)] font-anta"
           >
-            <option value="" disabled className="text-[#235950]" defaultValue>Select State</option>
+            <option value="" disabled className="text-[var(--color-primary)]" defaultValue>Select State</option>
             <option value="Andhra Pradesh">Andhra Pradesh</option>
             <option value="Arunachal Pradesh">Arunachal Pradesh</option>
             <option value="Assam">Assam</option>
@@ -180,16 +180,16 @@ const SignupForm = () => {
         </label>
 
         {/* course */}
-        <label className="flex text-[#235950] items-center space-x-2">
-          <FiBookOpen className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiBookOpen className="text-[26px] text-[var(--color-primary)]" />
           <select
             name="course"
             required
             value={formData.course}
             onChange={handleChange}
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full text-[#235950] font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full text-[var(--color-primary)] font-anta"
           >
-            <option value="" className="font-anta text-[#235950]" defaultValue disabled>Select Course</option>
+            <option value="" className="font-anta text-[var(--color-primary)]" defaultValue disabled>Select Course</option>
             <option value="B.Tech" className="font-anta">B.Tech</option>
             <option value="B.Sc" className="font-anta">B.Sc</option>
             <option value="B.Com" className="font-anta">B.Com</option>
@@ -205,18 +205,18 @@ const SignupForm = () => {
         <div className="flex justify-center items-center">
           <button
             type="submit"
-            className="bg-[#235950] w-[200px] font-dosis hover:bg-[#063930] text-white font-bold py-2 px-4 rounded"
+            className="bg-[var(--color-primary)] w-[200px] font-dosis hover:bg-[var(--color-primary-strong)] text-[var(--color-on-primary)] font-bold py-2 px-4 rounded"
           >
             Register
           </button>
         </div>
       </form>
-      {error && <p className="text-red-500 text-center mt-7">{error}</p>}
+      {error && <p className="text-[var(--color-error)] text-center mt-7">{error}</p>}
 
       <div className="mt-4 text-center">
         <p>
           Already a user?{" "}
-          <span className="text-[#1e584e] hover:underline cursor-pointer">
+          <span className="text-[var(--color-primary)] hover:underline cursor-pointer">
             <Link to="/auth/login">Login</Link>
           </span>
         </p>

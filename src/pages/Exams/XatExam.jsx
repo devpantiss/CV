@@ -199,8 +199,8 @@ const XatExam = () => {
         <section id="exam-dates" className="exam-dates-section">
           <h2 className="section-title">Upcoming MAT Exam Dates</h2>
           <div className="relative overflow-x-auto">
-            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-green-500 dark:bg-gray-700 dark:text-gray-400">
+            <table className="w-full text-sm text-left rtl:text-right text-[var(--color-muted)]">
+              <thead className="text-xs text-[var(--color-foreground)] uppercase bg-[var(--color-primary-soft)]">
                 <tr>
                   <th scope="col" className="px-6 py-3">Dates</th>
                   <th scope="col" className="px-6 py-3">Upcoming Exam Dates</th>
@@ -209,7 +209,7 @@ const XatExam = () => {
               </thead>
               <tbody>
                 {examDates.map((exam, index) => (
-                  <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'} ${index === 0 ? '' : 'border-t border-gray-200 dark:border-gray-700'}`}>
+                  <tr key={index} className={`${index % 2 === 0 ? 'bg-[var(--color-surface-muted)]' : 'bg-[var(--color-surface)]'} ${index === 0 ? '' : 'border-t border-[var(--color-border)]'}`}>
                     <td className="px-6 py-4">{exam.Dates}</td>
                     <td className="px-6 py-4">{exam['Upcoming Exam Dates']}</td>
                     <td className="px-6 py-4">{exam.Status}</td>
@@ -225,8 +225,8 @@ const XatExam = () => {
           <p className="section-content">
             MAT Exam Syllabus:
           </p>
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead className="text-xs text-gray-700 uppercase bg-green-500 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-full text-sm text-left rtl:text-right text-[var(--color-muted)]">
+            <thead className="text-xs text-[var(--color-foreground)] uppercase bg-[var(--color-primary-soft)]">
               <tr>
                 <th scope="col" className="px-6 py-3">Section</th>
                 <th scope="col" className="px-6 py-3">Topics</th>
@@ -236,7 +236,7 @@ const XatExam = () => {
       </thead>
       <tbody>
       {syllabusData.map((section, index) => (
-  <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'} ${index === 0 ? '' : 'border-t border-gray-200 dark:border-gray-700'}`}>
+  <tr key={index} className={`${index % 2 === 0 ? 'bg-[var(--color-surface-muted)]' : 'bg-[var(--color-surface)]'} ${index === 0 ? '' : 'border-t border-[var(--color-border)]'}`}>
     <td className="px-6 py-4">{section.section}</td>
     <td className="px-6 py-4">
       <ul>
@@ -254,8 +254,8 @@ const XatExam = () => {
         <section id="exam-pattern" className="exam-pattern-section">
           <h2 className="section-title">Syllabus</h2>
          
-          <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead className="text-xs text-gray-700 uppercase bg-green-500 dark:bg-gray-700 dark:text-gray-400">
+          <table className="w-full text-sm text-left rtl:text-right text-[var(--color-muted)]">
+      <thead className="text-xs text-[var(--color-foreground)] uppercase bg-[var(--color-primary-soft)]">
         <tr>
           <th scope="col" className="px-6 py-3">Section</th>
           <th scope="col" className="px-6 py-3">MCQs</th>
@@ -266,7 +266,7 @@ const XatExam = () => {
       </thead>
       <tbody>
   {examPatternData.map((section, index) => (
-    <tr key={index} className={`${index % 2 === 0 ? 'bg-gray-100' : 'bg-white'} ${index === examPatternData.length - 1 ? 'border-t border-gray-200 dark:border-gray-700' : ''}`}>
+    <tr key={index} className={`${index % 2 === 0 ? 'bg-[var(--color-surface-muted)]' : 'bg-[var(--color-surface)]'} ${index === examPatternData.length - 1 ? 'border-t border-[var(--color-border)]' : ''}`}>
       <td className="px-6 py-4">{section.section}</td>
       <td className="px-6 py-4">{section.MCQs}</td>
       
@@ -281,8 +281,8 @@ const XatExam = () => {
           <h2 className="section-title">Top Colleges</h2>
           <h3 className="section-sub-title"><b>Government Colleges</b></h3>
           <div className="relative overflow-x-auto ">
-            <table id="government" className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-green-500 dark:bg-gray-700 dark:text-gray-400">
+            <table id="government" className="w-full text-sm text-left rtl:text-right text-[var(--color-muted)]">
+              <thead className="text-xs text-[var(--color-foreground)] uppercase bg-[var(--color-primary-soft)]">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     College Name
@@ -313,8 +313,8 @@ const XatExam = () => {
             </div>
             <h3 className="section-sub-title"><b>Private Colleges</b></h3>
           <div className="relative overflow-x-auto ">
-            <table id="privatecolleges" className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-              <thead className="text-xs text-gray-700 uppercase bg-green-500 dark:bg-gray-700 dark:text-gray-400">
+            <table id="privatecolleges" className="w-full text-sm text-left rtl:text-right text-[var(--color-muted)]">
+              <thead className="text-xs text-[var(--color-foreground)] uppercase bg-[var(--color-primary-soft)]">
                 <tr>
                   <th scope="col" className="px-6 py-3">
                     College Name

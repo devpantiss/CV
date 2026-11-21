@@ -1,0 +1,2 @@
+verification
+{"event_registration_count":1,"event_consent_saved":true,"contact_query_count":1,"contact_pending":true,"rls_enabled":true,"contact_sheet_exists":true}

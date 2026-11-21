@@ -1,0 +1,192 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "errors": [],
+    "layout": {
+      "viewport": 1440,
+      "documentWidth": 1440,
+      "sectionWidth": 1440,
+      "heading": "Guidance that moves with you."
+    },
+    "cardCount": 4,
+    "defaultActiveIndex": 1,
+    "controls": [
+      {
+        "name": "Education Fairs & Open Houses",
+        "expanded": "false",
+        "controls": "why-details-education",
+        "targetExists": true
+      },
+      {
+        "name": "Expert Guidance",
+        "expanded": "true",
+        "controls": "why-details-guidance",
+        "targetExists": true
+      },
+      {
+        "name": "Wide Range of Options",
+        "expanded": "false",
+        "controls": "why-details-options",
+        "targetExists": true
+      },
+      {
+        "name": "Unparalleled Support",
+        "expanded": "false",
+        "controls": "why-details-support",
+        "targetExists": true
+      }
+    ],
+    "hoverActiveIndex": 0,
+    "keyboard": {
+      "tabs": 2,
+      "secondControlFocused": true,
+      "activeIndex": 1,
+      "outline": "rgb(40, 100, 88) solid 3px"
+    },
+    "consultation": {
+      "opened": true,
+      "escapeCloses": true
+    },
+    "links": [
+      {
+        "index": 0,
+        "activeIndex": 0,
+        "targets": [
+          {
+            "text": "Explore our events",
+            "href": "/events?tab=Upcoming",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "activeIndex": 1,
+        "targets": []
+      },
+      {
+        "index": 2,
+        "activeIndex": 2,
+        "targets": [
+          {
+            "text": "UG options",
+            "href": "/colleges/ug",
+            "visible": true
+          },
+          {
+            "text": "PG options",
+            "href": "/colleges/pg",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "activeIndex": 3,
+        "targets": [
+          {
+            "text": "Talk with us",
+            "href": "/contact_us",
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "ugNavigation": "/colleges/ug"
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": [],
+    "layout": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "sectionWidth": 390,
+      "heading": "Guidance that moves with you."
+    },
+    "cardCount": 4,
+    "defaultActiveIndex": 1,
+    "controls": [
+      {
+        "name": "Education Fairs & Open Houses",
+        "expanded": "false",
+        "controls": "why-details-education",
+        "targetExists": true
+      },
+      {
+        "name": "Expert Guidance",
+        "expanded": "true",
+        "controls": "why-details-guidance",
+        "targetExists": true
+      },
+      {
+        "name": "Wide Range of Options",
+        "expanded": "false",
+        "controls": "why-details-options",
+        "targetExists": true
+      },
+      {
+        "name": "Unparalleled Support",
+        "expanded": "false",
+        "controls": "why-details-support",
+        "targetExists": true
+      }
+    ],
+    "tapActiveIndex": 0,
+    "consultation": {
+      "opened": true,
+      "escapeCloses": true
+    },
+    "links": [
+      {
+        "index": 0,
+        "activeIndex": 0,
+        "targets": [
+          {
+            "text": "Explore our events",
+            "href": "/events?tab=Upcoming",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "activeIndex": 1,
+        "targets": []
+      },
+      {
+        "index": 2,
+        "activeIndex": 2,
+        "targets": [
+          {
+            "text": "UG options",
+            "href": "/colleges/ug",
+            "visible": true
+          },
+          {
+            "text": "PG options",
+            "href": "/colleges/pg",
+            "visible": true
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "activeIndex": 3,
+        "targets": [
+          {
+            "text": "Talk with us",
+            "href": "/contact_us",
+            "visible": true
+          }
+        ]
+      }
+    ],
+    "ugNavigation": "/colleges/ug"
+  }
+]

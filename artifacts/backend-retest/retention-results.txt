@@ -1,0 +1,2 @@
+verification
+{"registered_event_delete_protected":true,"no_test_drafts_leaked":true}

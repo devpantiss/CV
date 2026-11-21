@@ -1,0 +1,92 @@
+{
+  "contract": "DESIGN.md: retain original Career Valley logo; warm ivory, sage and peach light surfaces; readable forest primary actions; shared tokens; no horizontal overflow at mobile and desktop; preserve existing routes and footer video.",
+  "targetViewports": [
+    "390x844",
+    "1440x900"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Keyboard Tab reveals the skip link with a 3px forest focus outline. Desktop and mobile menus close with Escape; mobile focus returns to the trigger. Consultation opens with a labelled close button and closes with Escape. Selected explorer controls expose aria-pressed. Calculated contrast: primary action 6.88:1, muted on ivory 5.13:1, muted on sage 4.66:1, muted on peach 4.55:1. Reduced motion uses static pathway cards. This is targeted verification, not a full accessibility audit."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Nine routes checked at both 390x844 and 1440x900 (18 completed measurements in results.json): home, about, services, contact, events, undergraduate colleges, college explorer, B.Tech guide, and login. No horizontal document overflow or console/page errors. Inspected representative mobile and desktop screenshots, normal-motion pathway cards, and explorer selection. Intentional scrolling card rails remain contained."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "pass",
+      "evidence": "Browser-local delayed event API fixture shows Loading events skeletons with light token surfaces; application loading spinner also observed."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "Browser-local empty events response shows the existing No upcoming events right now message and recovery guidance."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Browser-local failed events response shows the existing error UI and Try again action; recorded in interactions.json."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "Home preview events remain visible with the preview-schedule notice while the schedule is unavailable. Some remote photos were unavailable or slow in captures; their layout remains reserved."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Selecting Business in the explorer updates its pressed state and renders BBA, B.Com and MBA course links. Consultation open/close succeeds. These are client-side interaction checks; no server-side registration or authentication success is claimed."
+    },
+    "permission": {
+      "status": "not-applicable",
+      "reason": "The palette and logo change introduces no permission request or protected action. Existing authenticated registration is outside this visual validation and was not submitted."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "390x844",
+      "artifact": "home-390.png",
+      "observation": "Original unfiltered logo, light hero, readable primary and secondary actions, and responsive mobile layout."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "contact_us-390.png",
+      "observation": "Light contact cards, labelled form fields and primary action; footer retains original branding."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "home-1440.png",
+      "observation": "Full desktop navigation fits alongside the original logo; warm light overlay keeps the image and forest heading readable."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "about-1440.png",
+      "observation": "Sage and peach shared hero treatment, light story visual and strong green action."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "pathways-motion-1440.png",
+      "observation": "Normal-motion pathway section is light with readable forest text and white detail cards."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "explorer-1440.png",
+      "observation": "Business selection uses a high-contrast primary state; related course links and secondary copy are readable on light surfaces."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "auth-login-390.png",
+      "observation": "Original logo, white login surface, readable labels and forest action without document overflow."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "courses-btech-390.png",
+      "observation": "Light sage-to-peach course hero and contained horizontal course navigation. Existing typewriter text captured mid-animation."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "events-error-1440.png",
+      "observation": "Locally mocked event error and retry action; corrected light footer with original logo and readable labels, background rgb(237, 242, 235), ink rgb(32, 59, 51)."
+    }
+  ],
+  "limitations": [
+    "External photo and university-logo loading varies by provider; some captures contain reserved media areas.",
+    "Live authentication, registration and email delivery were not submitted. Event state validation uses local browser fixtures."
+  ]
+}

@@ -1,9 +1,9 @@
-import React from 'react';
+import BrandLogo from '../../ui/BrandLogo';
 import './loader.css'; // Ensure this file contains the relevant CSS
 
 const Loader = () => {
     return (
-        <div className="overlay">
+        <div className="overlay" role="status" aria-label="Loading Career Valley">
             <div id="page">
                 <div id="container">
                     <div id="ring"></div>
@@ -11,7 +11,7 @@ const Loader = () => {
                     <div id="ring"></div>
                     <div id="ring"></div>
                     <div id="h3">
-                        <img src="https://i.postimg.cc/yYsngF3z/Career-Vallet-Logo.png" width="60px" />
+                        <BrandLogo className="w-32" />
                     </div>
                 </div>
             </div>

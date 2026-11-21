@@ -1,0 +1,42 @@
+[
+  {
+    "route": "/",
+    "muted": true,
+    "playing": true,
+    "poster": "http://127.0.0.1:5181/media/heroes/student-discussion.jpg",
+    "ready": 4,
+    "source": "http://127.0.0.1:5181/media/heroes/student-discussion.mp4"
+  },
+  {
+    "route": "/about",
+    "muted": true,
+    "playing": true,
+    "poster": "http://127.0.0.1:5181/media/heroes/about-campus.jpg",
+    "ready": 4,
+    "source": "http://127.0.0.1:5181/media/heroes/about-campus.mp4"
+  },
+  {
+    "route": "/services",
+    "muted": true,
+    "playing": true,
+    "poster": "http://127.0.0.1:5181/media/heroes/services-guidance.jpg",
+    "ready": 4,
+    "source": "http://127.0.0.1:5181/media/heroes/services-guidance.mp4"
+  },
+  {
+    "route": "/team",
+    "muted": true,
+    "playing": true,
+    "poster": "http://127.0.0.1:5181/media/heroes/team-collaboration.jpg",
+    "ready": 4,
+    "source": "http://127.0.0.1:5181/media/heroes/team-collaboration.mp4"
+  },
+  {
+    "route": "/experts",
+    "muted": true,
+    "playing": true,
+    "poster": "http://127.0.0.1:5181/media/heroes/experts-discussion.jpg",
+    "ready": 4,
+    "source": "http://127.0.0.1:5181/media/heroes/experts-discussion.mp4"
+  }
+]

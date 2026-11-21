@@ -23,27 +23,27 @@ const ForgotPasswordForm = () => {
   return (
     <div>
       {success ? (
-        <p className="text-center text-xl font-semibold text-[#1e584e]">
+        <p className="text-center text-xl font-semibold text-[var(--color-primary)]">
           Check your email inbox for the password reset link.
         </p>
       ) : (
         <>
-          <h1 className="text-center mb-3 text-2xl font-bold text-[#1e584e]">
+          <h1 className="text-center mb-3 text-2xl font-bold text-[var(--color-primary)]">
             Forgot password?
           </h1>
-          <p className="my-3 font-semibold ml-7 text-center text-[#1e584e]">
+          <p className="my-3 font-semibold ml-7 text-center text-[var(--color-primary)]">
             Enter your registered email address below and we'll send you a mail with the password reset link.
           </p>
           <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
-            <label className="flex text-[#1e584e] items-center space-x-2">
-              <FiMail className="text-[26px] text-[#1e584e]" />
+            <label className="flex text-[var(--color-primary)] items-center space-x-2">
+              <FiMail className="text-[26px] text-[var(--color-primary)]" />
               <input
                 type="email"
                 required
                 autoComplete="email"
                 name="email"
                 placeholder="Email Address."
-                className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] font-anta"
+                className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] font-anta"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -55,14 +55,14 @@ const ForgotPasswordForm = () => {
               <div className="flex justify-center items-center">
                 <button
                   type="submit"
-                  className="bg-[#235950] w-[200px] font-dosis hover:bg-[#063930] text-white font-bold py-2 px-4 rounded"
+                  className="bg-[var(--color-primary)] w-[200px] font-dosis hover:bg-[var(--color-primary-strong)] text-[var(--color-on-primary)] font-bold py-2 px-4 rounded"
                 >
                   Submit
                 </button>
               </div>
             )}
           </form>
-          {error && <p className="text-red-500 text-center mt-5">{error}</p>}
+          {error && <p className="text-[var(--color-error)] text-center mt-5">{error}</p>}
         </>
       )}
     </div>

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "anonymous send blocked",
+    "status": 401,
+    "passed": true
+  },
+  {
+    "name": "publishable key cannot send",
+    "status": 401,
+    "passed": true
+  },
+  {
+    "name": "unapproved origin blocked",
+    "status": 403,
+    "passed": true
+  }
+]

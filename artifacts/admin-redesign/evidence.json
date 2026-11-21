@@ -1,0 +1,89 @@
+{
+  "contract": "contract.md \u2014 Career Valley studio redesign; interactive local preview; integration deferred by user.",
+  "targetViewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Native dialog labelled by heading. Shift+Tab wrapped from Close to Save with visible solid focus; Escape closed and restored focus to the originating Edit button. Labelled fields, focused inline LinkedIn validation error, light/dark visual review, 40px controls. Reduced-motion CSS disables card movement and skeleton animation; OS preference emulation was not available."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Rendered at exact 1440x900 and 390x844 using device emulation. document scrollWidth equals viewport width. Mobile form scrollWidth/clientWidth both 390; footer bottom remains 844. Mobile fields use 16px type; desktop uses a two-column panel."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "untested",
+      "evidence": "Skeleton collections and disabled Saving controls implemented. Live async collection loading cannot be exercised before the deferred Supabase connection."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "A non-matching search rendered Nothing here matches just yet with Clear filters recovery; screenshot empty.png."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Saved a team entry with https://example.com/profile in LinkedIn field. Validation alert appeared in the form, received focus, retained values and allowed correction; screenshot form-error.png."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "Dispatched an image error to an event image. After React render, Image unavailable placeholder appeared while all three cards remained usable; screenshot partial.png."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Corrected LinkedIn URL and saved preview. Dialog closed, focus returned to Edit Sonali Mulay, success notification appeared, and LinkedIn anchor had _blank plus noopener noreferrer; screenshot success.png."
+    },
+    "permission": {
+      "status": "untested",
+      "evidence": "Admin verification remains enforced for configured Supabase. No project exists yet; live authentication and denied-access rendering are not tested in this layout-preview phase."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x900",
+      "artifact": "desktop.png",
+      "observation": "Light desktop collection with dark navigation, compact counts, search, filters and three event cards visible."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "desktop-form.png",
+      "observation": "Native modal side panel, grouped details and registration, right image/publication rail, persistent save footer and keyboard focus ring."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "mobile.png",
+      "observation": "Horizontal collection navigation, single-column collection and no page overflow."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "mobile-form.png",
+      "observation": "Full-width single-column modal form with labelled inputs and persistent bottom Save controls."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "dark.png",
+      "observation": "Dark tokens applied to canvas, sidebar, text, badges, fields and buttons with visible hierarchy."
+    },
+    {
+      "viewport": "1440x900",
+      "artifact": "gallery-podcasts.png",
+      "observation": "Published temporary YouTube example with loaded thumbnail, title, description and external watch action."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "gallery-mobile-upload.png",
+      "observation": "Gallery type selector, labelled title/description, drag/drop upload and persistent Save entry footer at 390px."
+    }
+  ],
+  "verificationLimit": "The evidence checker is expected to flag live loading and permission states as untested. These are integration-stage checks, not claimed as passing.",
+  "galleryVerification": {
+    "status": "preview verified",
+    "observations": [
+      "Published a temporary YouTube example through the editor; public /gallery showed Images and Podcasts headings and loaded a 480px thumbnail.",
+      "Public podcast anchor normalized to YouTube watch URL with target=_blank and rel=noopener noreferrer.",
+      "Rejected test.exe through the file input. Uploaded a generated valid WAV file, saved and navigated via View gallery; public audio player had controls and readyState 4.",
+      "Direct /admin/gallery route selected Gallery. At 390x844 page and form scroll widths both equalled 390; Save footer remained visible.",
+      "Temporary test entries were reset before handing back the preview. Live upload/storage policies remain untested."
+    ]
+  }
+}

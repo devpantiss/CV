@@ -47,14 +47,14 @@ const ResetPasswordForm = () => {
   return (
     <div>
       {loading && <Loader />}
-      <h1 className="text-center mb-3 text-2xl font-bold text-[#1e584e]">
+      <h1 className="text-center mb-3 text-2xl font-bold text-[var(--color-primary)]">
         Reset Password
       </h1>
-      {resetPasswordStatus && <p className="text-green-500 text-center">{resetPasswordStatus}</p>}
-      {!passwordsMatch && <p className="text-red-500 text-center">Passwords do not match!</p>}
+      {resetPasswordStatus && <p className="text-[var(--color-success)] text-center">{resetPasswordStatus}</p>}
+      {!passwordsMatch && <p className="text-[var(--color-error)] text-center">Passwords do not match!</p>}
       <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
-        <label className="flex text-[#1e584e] items-center space-x-2">
-          <FiKey className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiKey className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="password"
             required
@@ -62,13 +62,13 @@ const ResetPasswordForm = () => {
             autoComplete="new-password"
             name="newPassword"
             placeholder="Enter New Password."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] font-anta"
             value={newPassword}
             onChange={handleNewPasswordChange}
           />
         </label>
-        <label className="flex text-[#1e584e] items-center space-x-2">
-          <FiKey className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiKey className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="password"
             required
@@ -76,20 +76,20 @@ const ResetPasswordForm = () => {
             autoComplete="new-password"
             name="confirmPassword"
             placeholder="Confirm New Password."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] font-anta"
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
           />
         </label>
         <button
           type="submit"
-          className="bg-[#235950] font-dosis hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-[var(--color-primary)] font-dosis hover:bg-[var(--color-primary-strong)] text-[var(--color-on-primary)] font-bold py-2 px-4 rounded"
           disabled={loading}
         >
           Reset Password
         </button>
       </form>
-      {error && <p className="text-red-500 text-center">{error}</p>}
+      {error && <p className="text-[var(--color-error)] text-center">{error}</p>}
 
     </div>
   );

@@ -1,0 +1,58 @@
+[
+  {
+    "route": "/about",
+    "heading": "Guidance built around the person—not just the programme.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/team",
+    "heading": "Real people behind every clearer decision.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/experts",
+    "heading": "Expertise that connects institutions with opportunity.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/gallery",
+    "heading": "Moments to remember. Conversations to take with you.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/contact_us",
+    "heading": "Bring us the question you’re trying to answer.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/explorecity",
+    "heading": "College options.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/colleges/ug",
+    "heading": "Undergraduate options, city by city.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  },
+  {
+    "route": "/colleges/pg",
+    "heading": "Postgraduate options, city by city.",
+    "photo": true,
+    "scroll": 1007,
+    "width": 1007
+  }
+]

@@ -1,19 +1,40 @@
-import { useMemo, useState } from 'react';
-import { FiArrowRight, FiCheck, FiCompass, FiInfo } from 'react-icons/fi';
+import { useState } from 'react';
+import { FiArrowUpRight, FiBookOpen, FiBriefcase, FiCheck, FiCode, FiCompass, FiInfo, FiUsers } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import './career-explorer.css';
 
 const interests = {
-  Technology: { accent: '#dff3ec', summary: 'Build, solve and improve how things work.', paths: [{ label: 'B.Tech', to: '/courses/btech' }, { label: 'BCA', to: '/courses/bca' }, { label: 'M.Tech', to: '/courses/mtech' }] },
-  Business: { accent: '#fff0d5', summary: 'Understand organisations, markets and decisions.', paths: [{ label: 'BBA', to: '/courses/bba' }, { label: 'B.Com', to: '/courses/bcom' }, { label: 'MBA', to: '/courses/mba' }] },
-  Science: { accent: '#e9edfa', summary: 'Investigate questions through evidence and discovery.', paths: [{ label: 'B.Sc', to: '/courses/bsc' }, { label: 'B.Tech', to: '/courses/btech' }] },
-  'People & society': { accent: '#f2eaf4', summary: 'Explore people, ideas, culture and institutions.', paths: [{ label: 'BA', to: '/courses/ba' }, { label: 'LLB', to: '/courses/llb' }] },
+  Technology: { icon: FiCode, image: 'engineering', summary: 'Build, solve and improve how things work.', paths: [{ label: 'B.Tech', to: '/courses/btech' }, { label: 'BCA', to: '/courses/bca' }, { label: 'M.Tech', to: '/courses/mtech', postgraduate: true }] },
+  Business: { icon: FiBriefcase, image: 'business', summary: 'Understand organisations, markets and decisions.', paths: [{ label: 'BBA', to: '/courses/bba' }, { label: 'B.Com', to: '/courses/bcom' }, { label: 'MBA', to: '/courses/mba', postgraduate: true }] },
+  Science: { icon: FiCompass, image: 'science', summary: 'Investigate questions through evidence and discovery.', paths: [{ label: 'B.Sc', to: '/courses/bsc' }, { label: 'B.Tech', to: '/courses/btech' }] },
+  'People & society': { icon: FiUsers, image: 'humanities', summary: 'Explore people, ideas, culture and institutions.', paths: [{ label: 'BA', to: '/courses/ba' }, { label: 'LLB', to: '/courses/llb' }] },
 };
 const stages = ['Exploring after school', 'Choosing an undergraduate course', 'Planning postgraduate study'];
-
-const CareerPathExplorer = () => {
+export default function CareerPathExplorer() {
   const [interest, setInterest] = useState('Technology');
   const [stage, setStage] = useState(stages[0]);
-  const selected = useMemo(() => interests[interest], [interest]);
-  return <div className="overflow-hidden rounded-[2rem] border border-[var(--color-border)] bg-[#102f29] text-white shadow-[var(--shadow-lg)]"><div className="grid lg:grid-cols-[.9fr_1.1fr]"><div className="border-b border-white/10 p-6 md:p-9 lg:border-b-0 lg:border-r"><div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-2xl bg-white/10 text-[var(--color-accent)]"><FiCompass /></span><div><p className="text-[10px] font-extrabold uppercase tracking-[.18em] text-white/50">Interactive explorer</p><h3 className="text-xl font-bold">What are you curious about?</h3></div></div><div className="mt-8 grid grid-cols-2 gap-2">{Object.keys(interests).map((item) => <button key={item} type="button" onClick={() => setInterest(item)} className={`rounded-2xl border px-4 py-4 text-left text-sm font-bold transition-all ${interest === item ? 'border-white bg-white text-[var(--color-primary)] shadow-lg' : 'border-white/10 bg-white/5 text-white/70 hover:bg-white/10'}`} aria-pressed={interest === item}>{item}</button>)}</div><p className="mt-8 text-xs font-bold uppercase tracking-widest text-white/45">Where are you now?</p><div className="mt-3 grid gap-2">{stages.map((item) => <button key={item} type="button" onClick={() => setStage(item)} className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-left text-sm ${stage === item ? 'bg-white/10 font-bold text-white' : 'text-white/55 hover:text-white'}`}><span className={`grid h-5 w-5 place-items-center rounded-full border ${stage === item ? 'border-[var(--color-accent)] bg-[var(--color-accent)] text-[#17312c]' : 'border-white/25'}`}>{stage === item && <FiCheck className="text-xs" />}</span>{item}</button>)}</div></div><div className="relative overflow-hidden p-6 md:p-9"><span className="absolute -right-20 -top-20 h-64 w-64 rounded-full opacity-40 blur-2xl" style={{ background: selected.accent }} /><div className="relative"><span className="inline-flex rounded-full px-3 py-1.5 text-xs font-extrabold text-[#17312c]" style={{ background: selected.accent }}>{interest}</span><p className="mt-6 text-xs font-bold uppercase tracking-widest text-white/45">A useful starting lens</p><h3 className="mt-3 max-w-xl text-3xl font-bold tracking-[-.035em] md:text-4xl">{selected.summary}</h3><p className="mt-4 max-w-lg text-sm leading-7 text-white/60">For someone {stage.toLowerCase()}, these existing course guides can help you begin comparing possibilities.</p><div className="mt-8 grid gap-3 sm:grid-cols-2">{selected.paths.map((path) => <Link key={path.label} to={path.to} className="group flex items-center justify-between rounded-2xl border border-white/10 bg-white/10 p-4 font-bold backdrop-blur hover:bg-white/15"><span><small className="block text-[10px] uppercase tracking-widest text-white/45">Course guide</small>{path.label}</span><FiArrowRight className="transition-transform group-hover:translate-x-1" /></Link>)}</div><div className="mt-8 flex items-start gap-3 rounded-2xl border border-white/10 bg-black/10 p-4 text-xs leading-6 text-white/50"><FiInfo className="mt-1 shrink-0" /><p>This is an exploration aid, not a career assessment or recommendation. A counsellor can help put these options in context.</p></div></div></div></div></div>;
-};
-export default CareerPathExplorer;
+  const selected = interests[interest];
+  const postgraduate = stage === stages[2];
+  const matched = selected.paths.filter(path => Boolean(path.postgraduate) === postgraduate);
+  const paths = matched.length ? matched : selected.paths;
+  const foundation = postgraduate && !matched.length;
+  return <div className="career-explorer">
+    <div className="explorer-controls">
+      <div className="explorer-intro"><span className="explorer-compass"><FiCompass aria-hidden="true" /></span><div><span className="explorer-overline">A starting point, shaped by you</span><h3>Follow your curiosity.</h3></div></div>
+      <fieldset className="explorer-step"><legend><span>01</span>What interests you?</legend><div className="explorer-interest-grid">{Object.entries(interests).map(([name, item]) => {
+        const Icon = item.icon;
+        return <label className="explorer-interest" key={name}><input type="radio" name="career-interest" value={name} checked={interest === name} onChange={() => setInterest(name)} /><span><Icon aria-hidden="true" /><strong>{name}</strong><FiCheck className="explorer-interest-check" aria-hidden="true" /></span></label>;
+      })}</div></fieldset>
+      <fieldset className="explorer-step"><legend><span>02</span>Where are you now?</legend><div className="explorer-stages">{stages.map((item, index) => <label key={item} className="explorer-stage"><input type="radio" name="career-stage" value={item} checked={stage === item} onChange={() => setStage(item)} /><span className="explorer-stage-copy"><strong>{item}</strong><small>{['Discover your options','Compare courses and colleges','Build on your first degree'][index]}</small></span></label>)}</div></fieldset>
+      <p className="explorer-control-note"><FiCheck aria-hidden="true" />No signup. Explore at your own pace.</p>
+    </div>
+    <div className="explorer-results" aria-live="polite" aria-atomic="true">
+      <div className="explorer-result-visual"><img src={`/media/pathways/${selected.image}.jpg`} alt="" width="900" height="600" loading="lazy" /><div><span className="explorer-result-tag"><FiCompass aria-hidden="true" />{interest}</span><h3>{selected.summary}</h3></div></div>
+      <div className="explorer-result-body"><div className="explorer-results-heading"><div><span className="explorer-overline">Your next place to look</span><h4>{foundation ? 'Explore the foundations' : 'Start with these course guides'}</h4></div><span className="explorer-guide-count">{paths.length} {paths.length === 1 ? 'guide' : 'guides'}</span></div>
+        <p className="explorer-results-context">{foundation ? 'We don’t yet have a postgraduate guide for this interest. Explore these existing guides for context, or speak with a counsellor about your next degree.' : `For someone ${stage.toLowerCase()}, these guides can help you compare the possibilities.`}</p>
+        <div className="explorer-course-links">{paths.map(path => <Link key={path.label} to={path.to}><span className="explorer-course-icon"><FiBookOpen aria-hidden="true" /></span><span><strong>{path.label}</strong><small>{path.postgraduate ? 'Postgraduate' : 'Course overview'} · Explore guide</small></span><FiArrowUpRight aria-hidden="true" /></Link>)}</div>
+        <p className="explorer-advice"><FiInfo aria-hidden="true" /><span>An exploration aid, not a career assessment. <Link to="/contact_us">Talk with a counsellor <FiArrowUpRight aria-hidden="true" /></Link> to put your options in context.</span></p>
+      </div>
+    </div>
+  </div>;
+}

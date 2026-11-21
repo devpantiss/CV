@@ -1,0 +1,15 @@
+import fs from 'node:fs/promises';
+const env=Object.fromEntries((await fs.readFile('.drive-secrets.local','utf8')).trim().split('\n').map(line=>{const i=line.indexOf('=');return[line.slice(0,i),line.slice(i+1)];}));
+const id=process.argv[2];if(!id)throw new Error('Pass the contact sheet ID.');
+const auth=await fetch('https://oauth2.googleapis.com/token',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({client_id:env.GOOGLE_CLIENT_ID,client_secret:env.GOOGLE_CLIENT_SECRET,refresh_token:env.GOOGLE_REFRESH_TOKEN,grant_type:'refresh_token'})});
+if(!auth.ok)throw new Error('Google authorization failed.');const token=(await auth.json()).access_token;
+const headers={Authorization:`Bearer ${token}`,'Content-Type':'application/json'};
+const meta=await fetch(`https://www.googleapis.com/drive/v3/files/${id}?fields=appProperties,parents,permissions(type,role)`,{headers});if(!meta.ok)throw new Error('Contact sheet not found.');const file=await meta.json();
+if(file.appProperties?.career_valley_collection!=='contact_queries'||!file.parents?.includes(env.GOOGLE_DRIVE_FOLDER_ID))throw new Error('Unexpected sheet.');
+const read=await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${id}/values/A1:H100`,{headers});if(!read.ok)throw new Error('Unable to read contact sheet.');const rows=(await read.json()).values;
+const testEmails=['contact-test@example.test','contact-api-test@example.test'];const found=rows.filter(row=>testEmails.includes(row[2]));
+const report={headersMatch:rows[0][0]==='Query ID',browserSubmission:found.some(row=>row[2]===testEmails[0]),apiSubmission:found.some(row=>row[2]===testEmails[1]),private:!!file.permissions?.length&&!file.permissions.some(p=>p.type==='anyone'||p.type==='domain')};
+if(!report.headersMatch||!report.browserSubmission||!report.apiSubmission||!report.private)throw new Error('Contact sheet verification failed.');
+const ranges=rows.flatMap((row,index)=>testEmails.includes(row[2])?[`A${index+1}:H${index+1}`]:[]);
+const clear=await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${id}/values:batchClear`,{method:'POST',headers,body:JSON.stringify({ranges})});report.testRowsCleared=clear.ok;
+await fs.writeFile('artifacts/contact-query/sheets-check.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));if(!clear.ok)process.exitCode=1;

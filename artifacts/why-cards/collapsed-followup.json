@@ -1,0 +1,21 @@
+{
+  "activeCount": 0,
+  "expectedDefaultIndex": -1,
+  "heights": [
+    370,
+    370,
+    370,
+    370
+  ],
+  "numberColors": [
+    "rgb(40, 100, 88)",
+    "rgb(40, 100, 88)",
+    "rgb(40, 100, 88)",
+    "rgb(40, 100, 88)"
+  ],
+  "documentOverflow": false,
+  "equalHeights": true,
+  "numbersMatchLogoGreen": true,
+  "hoverActiveIndex": 1,
+  "passed": true
+}

@@ -1,3 +1,4 @@
+import HeroMedia from '../../components/ui/HeroMedia';
 import React from "react";
 import { Link } from "react-router-dom";
 import { GrWorkshop } from "react-icons/gr";
@@ -5,7 +6,6 @@ import { TfiWrite } from "react-icons/tfi";
 import { IoMdCheckmarkCircleOutline } from "react-icons/io";
 import { PiStudent } from "react-icons/pi";
 import { LiaUniversitySolid } from "react-icons/lia";
-import { TypeAnimation } from "react-type-animation";
 import {
   FaLaptopCode,
   FaCogs,
@@ -151,27 +151,27 @@ const examData = [
 const streams = [
   {
     name: "Information Technology",
-    icon: <FaLaptopCode className="text-4xl text-[#235950]" />,
+    icon: <FaLaptopCode className="text-4xl text-[var(--color-primary)]" />,
   },
   {
     name: "Software Development",
-    icon: <FaCogs className="text-4xl text-[#235950]" />,
+    icon: <FaCogs className="text-4xl text-[var(--color-primary)]" />,
   },
   {
     name: "Network Security",
-    icon: <FaProjectDiagram className="text-4xl text-[#235950]" />,
+    icon: <FaProjectDiagram className="text-4xl text-[var(--color-primary)]" />,
   },
   {
     name: "Database Management",
-    icon: <FaMicrochip className="text-4xl text-[#235950]" />,
+    icon: <FaMicrochip className="text-4xl text-[var(--color-primary)]" />,
   },
   {
     name: "Web Development",
-    icon: <FaTools className="text-4xl text-[#235950]" />,
+    icon: <FaTools className="text-4xl text-[var(--color-primary)]" />,
   },
   {
     name: "Artificial Intelligence",
-    icon: <FaBroadcastTower className="text-4xl text-[#235950]" />,
+    icon: <FaBroadcastTower className="text-4xl text-[var(--color-primary)]" />,
   },
 ];
 
@@ -179,34 +179,16 @@ const BcaPage = () => {
   //
   return (
     <div className="btech-page-container">
-      <div className="hero-section bg-gradient-to-b lg:bg-gradient-to-br from-[#426e66] via-[#093029] to-[#0f312c] text-white pt-64 lg:pt-40 pb-20 px-6">
+      <div className="hero-section course-editorial-hero bg-gradient-to-b lg:bg-gradient-to-br from-[var(--color-primary-soft)] via-[var(--color-background)] to-[var(--color-accent-soft)] text-[var(--color-foreground)] pt-64 lg:pt-40 pb-20 px-6">
+        <HeroMedia image="/media/pathways/computing.jpg" />
+        <nav className="hero-breadcrumb" aria-label="Breadcrumb"><a href="/">Home</a><span aria-hidden="true">/</span><a href="/explorecity">Courses & colleges</a><span aria-hidden="true">/</span><span>Course guide</span></nav>
+        <p className="course-hero-kicker">Explore your next chapter</p>
         <div className="container mx-auto flex flex-col lg:flex-row items-center">
           <div className="w-full lg:w-1/2 mb-12 lg:mb-0">
-            <TypeAnimation
-              sequence={[
-                "Bachelor of Computer Application",
-                1000,
-                "(B.C.A)",
-                1000,
-              ]}
-              speed={50}
-              className="inline-block text-5xl font-bold drop-shadow-lg"
-              wrapper="span"
-              repeat={Infinity}
-            />
+            <h1 className="text-5xl font-bold">Bachelor of Computer Application</h1>
             <br />
-            <TypeAnimation
-              sequence={[
-                "Code Your Future: Empowering the Next Generation of Tech Innovators.",
-                2000,
-                "Code Your Future: Empowering the Next Generation of Tech Innovators.",
-              ]}
-              speed={50}
-              className="inline-block text-lg drop-shadow-lg mt-4"
-              wrapper="span"
-              repeat={Infinity}
-            />
-            {/* <h1 className="text-5xl font-bold drop-shadow-lg">Bachelor of Computer Application (B.C.A)</h1>
+            <p className="text-lg mt-4">Code Your Future: Empowering the Next Generation of Tech Innovators.</p>
+            {/* <h1 className="text-5xl font-bold">Bachelor of Computer Application (B.C.A)</h1>
             <p className="mt-4 text-lg">An in-depth look at the premier undergraduate program in engineering and technology.</p> */}
           </div>
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-end">
@@ -222,10 +204,10 @@ const BcaPage = () => {
 
       <main className="container mx-auto pb-12 pt-12 lg:pt-24 px-6">
         <section id="course-details" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center">
             <PiStudent className="mr-2" /> Course Details
           </h2>
-          <ul className="custom-list list-inside bg-gray-100 p-6 rounded-lg shadow-sm text-lg leading-relaxed">
+          <ul className="custom-list list-inside bg-[var(--color-surface-muted)] p-6 rounded-lg shadow-sm text-lg leading-relaxed">
             <li>
               BCA (Bachelor of Computer Application) is a three-year
               undergraduate program.
@@ -246,22 +228,22 @@ const BcaPage = () => {
         </section>
 
         <section id="streams" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center"><FaLaptopCode className="mr-2"/> Associated Streams</h2>
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center"><FaLaptopCode className="mr-2"/> Associated Streams</h2>
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {streams.map((stream, index) => (
-              <div key={index} className="flex flex-col items-center text-center bg-white shadow-md rounded-lg p-6">
+              <div key={index} className="flex flex-col items-center text-center bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {stream.icon}
-                <h4 className="text-lg font-bold mt-4 text-[#235950]">{stream.name}</h4>
+                <h4 className="text-lg font-bold mt-4 text-[var(--color-primary)]">{stream.name}</h4>
               </div>
             ))}
           </div>
         </section>
 
         <section id="eligibility-criteria" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center">
             <IoMdCheckmarkCircleOutline className="mr-2" /> Eligibility Criteria
           </h2>
-          <ul className="custom-list list-inside bg-gray-100 p-6 rounded-lg shadow-sm text-lg leading-relaxed">
+          <ul className="custom-list list-inside bg-[var(--color-surface-muted)] p-6 rounded-lg shadow-sm text-lg leading-relaxed">
             <li>
               Completion of 10+2 or equivalent examination from a recognized
               board.
@@ -281,17 +263,17 @@ const BcaPage = () => {
         </section>
 
         <section id="top-exams" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center">
             <TfiWrite className="mr-2" /> Top Exams
           </h2>
-          <div className="overflow-x-auto bg-white shadow-md rounded-lg">
-            <table className="w-full text-sm text-left text-gray-700">
-              <thead className="text-xs uppercase bg-gray-200 text-gray-600">
+          <div className="overflow-x-auto bg-[var(--color-surface)] shadow-md rounded-lg">
+            <table className="w-full text-sm text-left text-[var(--color-foreground)]">
+              <thead className="text-xs uppercase bg-[var(--color-primary-soft)] text-[var(--color-muted)]">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-[#235950]">
+                  <th scope="col" className="px-6 py-3 text-[var(--color-primary)]">
                     Exam Name
                   </th>
-                  <th scope="col" className="px-6 py-3 text-[#235950]">
+                  <th scope="col" className="px-6 py-3 text-[var(--color-primary)]">
                     Exam Dates
                   </th>
                 </tr>
@@ -301,13 +283,13 @@ const BcaPage = () => {
                   <tr
                     key={index}
                     className={`${
-                      index % 2 === 0 ? "bg-gray-100" : "bg-white"
-                    } border-t border-gray-200`}
+                      index % 2 === 0 ? "bg-[var(--color-surface-muted)]" : "bg-[var(--color-surface)]"
+                    } border-t border-[var(--color-border)]`}
                   >
                     <td className="px-6 py-4">
                       <Link
                         to={exam.siteUrl}
-                        className="hover:text-black text-[#235950]"
+                        className="hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]"
                       >
                         {exam.exam}
                       </Link>
@@ -330,10 +312,10 @@ const BcaPage = () => {
         </section>
 
         <section id="placement-details" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center">
             <FaBriefcase className="mr-2" /> Career Prospects
           </h2>
-          <ul className="custom-list list-inside bg-gray-100 p-6 rounded-lg shadow-sm text-lg leading-relaxed">
+          <ul className="custom-list list-inside bg-[var(--color-surface-muted)] p-6 rounded-lg shadow-sm text-lg leading-relaxed">
             <li>
               Eligibility criteria must be met before applying to any B.Tech
               placement, on- or off-campus.
@@ -349,28 +331,28 @@ const BcaPage = () => {
         </section>
 
         <section id="top-colleges" className="mb-12">
-          <h2 className="text-3xl font-bold mb-4 text-[#235950] flex items-center">
+          <h2 className="text-3xl font-bold mb-4 text-[var(--color-primary)] flex items-center">
             <LiaUniversitySolid className="mr-2" /> Top Colleges
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#235950]">
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--color-primary)]">
                 Government Colleges
               </h3>
-              <div className="bg-white shadow-md rounded-lg p-6">
+              <div className="bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {government.map((college, index) => (
                   <div
                     key={index}
                     className={`mb-4 ${
                       index < government.length - 1
-                        ? "border-b border-gray-200 pb-4"
+                        ? "border-b border-[var(--color-border)] pb-4"
                         : ""
                     }`}
                   >
                     <h4 className="text-lg font-bold">
                       <Link
                         to={college.siteUrl}
-                        className="hover:text-black text-[#235950]"
+                        className="hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]"
                       >
                         {college.name}
                       </Link>
@@ -383,23 +365,23 @@ const BcaPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#235950]">
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--color-primary)]">
                 Private Colleges
               </h3>
-              <div className="bg-white shadow-md rounded-lg p-6">
+              <div className="bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {privateCollege.map((college, index) => (
                   <div
                     key={index}
                     className={`mb-4 ${
                       index < privateCollege.length - 1
-                        ? "border-b border-gray-200 pb-4"
+                        ? "border-b border-[var(--color-border)] pb-4"
                         : ""
                     }`}
                   >
                     <h4 className="text-lg font-bold">
                       <Link
                         to={college.siteUrl}
-                        className="hover:text-black text-[#235950]"
+                        className="hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]"
                       >
                         {college.name}
                       </Link>
@@ -412,23 +394,23 @@ const BcaPage = () => {
             </div>
 
             <div>
-              <h3 className="text-2xl font-semibold mb-2 text-[#235950]">
+              <h3 className="text-2xl font-semibold mb-2 text-[var(--color-primary)]">
                 Featured Colleges
               </h3>
-              <div className="bg-white shadow-md rounded-lg p-6">
+              <div className="bg-[var(--color-surface)] shadow-md rounded-lg p-6">
                 {featuredCollege.map((college, index) => (
                   <div
                     key={index}
                     className={`mb-4 ${
                       index < featuredCollege.length - 1
-                        ? "border-b border-gray-200 pb-4"
+                        ? "border-b border-[var(--color-border)] pb-4"
                         : ""
                     }`}
                   >
                     <h4 className="text-lg font-bold">
                       <Link
                         to={college.siteUrl}
-                        className="hover:text-black text-[#235950]"
+                        className="hover:text-[var(--color-primary-strong)] text-[var(--color-primary)]"
                       >
                         {college.name}
                       </Link>
@@ -451,7 +433,7 @@ const BcaPage = () => {
           position: absolute;
           left: 0;
           top: -5px;
-          color: #235950; 
+          color: var(--color-primary);
           font-size: 1.2em;
           font-weight: 800; 
         }

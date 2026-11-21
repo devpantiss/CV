@@ -1,0 +1,15 @@
+[
+  {
+    "kind": "contact",
+    "qaRowCount": 1,
+    "oneRowOnly": true,
+    "private": true,
+    "formulaInputStoredAsText": true
+  },
+  {
+    "kind": "event",
+    "qaRowCount": 1,
+    "oneRowOnly": true,
+    "private": true
+  }
+]

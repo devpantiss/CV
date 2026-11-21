@@ -1,0 +1,5 @@
+# Website correction contract
+Source: eight-page supplied correction PDF and supplied Career Catalyst 4.0 calendar poster.
+Direction: bright white editorial surfaces, teal brand actions, compact landscape process, actual supplied event artwork. Primary action: discover city/date and enquire. Preserve existing admin/Supabase behavior.
+Targets: 1440x900 and 390x844. All calendar dates transcribed from poster; weekdays computed from dates (poster has a weekday typo on 22 January). No invented event times. Reuse original repository testimonial quotes, not generated reviews. Expert bios must use existing content or await owner-approved copy.
+States: static calendar always available; no loading/auth required. Event feed still handles loading/error/empty; campaign cards are separate announced dates with contact enquiry rather than falsely claiming database registration. Responsive calendar uses city cards, full timetable has overflow contained. Partial venue/time information clearly stated. Calendar dialog closes with Escape, has focus containment and return focus through native dialog.

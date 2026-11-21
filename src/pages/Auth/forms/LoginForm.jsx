@@ -27,11 +27,11 @@ const LoginForm = () => {
 
   return (
     <div>
-      <h1 className="text-center mb-3 text-2xl font-bold text-[#1e584e]">Login</h1>
+      <h1 className="text-center mb-3 text-2xl font-bold text-[var(--color-primary)]">Login</h1>
       {loading && <Loader />}
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
-        <label className="flex text-[#1e584e] items-center space-x-2">
-          <FiMail className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiMail className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="email"
             required
@@ -40,11 +40,11 @@ const LoginForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email Address."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
-        <label className="flex text-[#1e584e] items-center space-x-2">
-          <FiKey className="text-[26px] text-[#1e584e]" />
+        <label className="flex text-[var(--color-primary)] items-center space-x-2">
+          <FiKey className="text-[26px] text-[var(--color-primary)]" />
           <input
             type="password"
             required
@@ -53,7 +53,7 @@ const LoginForm = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter Your Password."
-            className="border-b-2 border-[#235950] rounded-md p-2 w-full placeholder:text-[#235950] placeholder:font-anta"
+            className="border-b-2 border-[var(--color-border)] rounded-md p-2 w-full placeholder:text-[var(--color-muted)] placeholder:font-anta"
           />
         </label>
         <p className="ml-7">
@@ -64,7 +64,7 @@ const LoginForm = () => {
         <div className="flex justify-center items-center">
           <button
             type="submit"
-            className="bg-[#235950] w-[200px] font-dosis hover:bg-[#063930] text-white font-bold py-2 px-4 rounded"
+            className="bg-[var(--color-primary)] w-[200px] font-dosis hover:bg-[var(--color-primary-strong)] text-[var(--color-on-primary)] font-bold py-2 px-4 rounded"
             disabled={loading}
           >
             {loading ? 'Logging in...' : 'Login'}
@@ -72,12 +72,12 @@ const LoginForm = () => {
         </div>
       </form>
 
-      {error && <p className="text-red-500 text-center mt-5">{error}</p>}
+      {error && <p className="text-[var(--color-error)] text-center mt-5">{error}</p>}
 
       <div className="mt-4 text-center">
         <p>
           New here?{" "}
-          <span className="text-[#1e584e] hover:underline cursor-pointer">
+          <span className="text-[var(--color-primary)] hover:underline cursor-pointer">
             <Link to={"/auth/signup"}>Signup</Link>
           </span>
         </p>

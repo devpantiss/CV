@@ -1,0 +1,4 @@
+# Copy to .google-drive-client.local (ignored by Git).
+# Credentials for a Google OAuth Web application. Do not prefix with VITE_.
+GOOGLE_CLIENT_ID=your-client-id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=your-client-secret

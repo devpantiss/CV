@@ -1,3 +1,5 @@
+import { supabase } from '../../lib/supabase';
+import { readEvents } from '../../features/content/content';
 // src/redux/features/eventSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import api from '../../api/api';
@@ -27,6 +29,7 @@ export const registerForEvent = createAsyncThunk(
   'events/registerForEvent',
   async ({ eventId, token }, { rejectWithValue }) => {
     try {
+      if (supabase) throw new Error('Use the event registration link or contact the team to register.');
       const response = await api.post(
         `/api/events/${eventId}/register`,
         {},
@@ -48,6 +51,7 @@ export const fetchAllEvents = createAsyncThunk(
   'events/fetchAllEvents',
   async (_, { rejectWithValue }) => {
     try {
+      if (supabase) return { events: await readEvents() };
       const response = await api.get('/api/events/all');
       return response.data;
     } catch (error) {
@@ -61,6 +65,7 @@ export const fetchEventsByStatus = createAsyncThunk(
   'events/fetchEventsByStatus',
   async (status, { rejectWithValue }) => {
     try {
+      if (supabase) return { events: await readEvents(status) };
       const response = await api.get(`/api/events/${status}`);
       return response.data;
     } catch (error) {
@@ -74,6 +79,11 @@ export const fetchEventById = createAsyncThunk(
   'events/fetchEventById',
   async (eventId, { rejectWithValue }) => {
     try {
+      if (supabase) {
+        const { data, error } = await supabase.from('site_content').select('*').eq('id', eventId).eq('kind', 'events').single();
+        if (error) throw error;
+        return { event: { ...data.content, _id: data.id, source: 'supabase' } };
+      }
       const response = await api.get(`/api/events/event/${eventId}`);
       return response.data;
     } catch (error) {

@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+const e=Object.fromEntries((await fs.readFile('.drive-secrets.local','utf8')).trim().split('\n').map(x=>{let i=x.indexOf('=');return[x.slice(0,i),x.slice(i+1)]}));
+const auth=await fetch('https://oauth2.googleapis.com/token',{method:'POST',body:new URLSearchParams({client_id:e.GOOGLE_CLIENT_ID,client_secret:e.GOOGLE_CLIENT_SECRET,refresh_token:e.GOOGLE_REFRESH_TOKEN,grant_type:'refresh_token'})});if(!auth.ok)throw Error('Authorization failed');const h={Authorization:`Bearer ${(await auth.json()).access_token}`,'Content-Type':'application/json'};
+const contact='1JakiYbnJJdB-EHj4-H7taPt7nDImxwNLzB4qhv4RUEU',event='1LA9JJn8aQ3PHcq_7sJYzTRwO3UH7CsE26KBnN48oHd8';
+const req=async(url,options={})=>{const r=await fetch(url,{...options,headers:h});if(!r.ok)throw Error(`Google request failed ${r.status}`);return r.json()};
+const rows=(await req(`https://sheets.googleapis.com/v4/spreadsheets/${contact}/values/A1:H1000`)).values||[];
+const ranges=rows.flatMap((r,i)=>['backend-qa-20261120@example.test','backend-qa-browser-20261120@example.test'].includes(r[2])&&r[1]?.startsWith('BACKEND QA')?[`A${i+1}:H${i+1}`]:[]);
+if(ranges.length)await req(`https://sheets.googleapis.com/v4/spreadsheets/${contact}/values:batchClear`,{method:'POST',body:JSON.stringify({ranges})});
+const meta=await req(`https://www.googleapis.com/drive/v3/files/${event}?fields=appProperties,parents`);if(meta.appProperties?.career_valley_event!=='2848a8e8-23a2-4298-bc5a-6e15faac1388'||!meta.parents?.includes(e.GOOGLE_DRIVE_FOLDER_ID))throw Error('Unexpected test Sheet');
+const erows=(await req(`https://sheets.googleapis.com/v4/spreadsheets/${event}/values/A1:I1000`)).values||[];
+const automaticSyncConfirmed=erows.some(r=>r.includes('backend-qa-auto-20261120@example.test'));
+await req(`https://www.googleapis.com/drive/v3/files/${event}`,{method:'PATCH',body:JSON.stringify({trashed:true})});
+const report={contactQaRowsCleared:ranges.length,contactSheetRetained:true,automaticSyncConfirmed,eventTestSheetTrashed:true};await fs.writeFile('artifacts/backend-retest/google-cleanup.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

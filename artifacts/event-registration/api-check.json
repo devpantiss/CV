@@ -1,0 +1,19 @@
+{
+  "registration": {
+    "status": 200,
+    "success": true
+  },
+  "duplicate": {
+    "status": 200,
+    "success": true
+  },
+  "invalid": {
+    "status": 400,
+    "error": "Please enter a valid email address."
+  },
+  "syncWithoutAdmin": {
+    "status": 401,
+    "error": "Sign in as an administrator."
+  },
+  "anonymousReadStatus": 401
+}

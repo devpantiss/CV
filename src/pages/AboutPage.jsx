@@ -1,3 +1,7 @@
+import LinkedInLink from '../components/ui/LinkedInLink';
+import useContent from '../features/content/useContent';
+import { teamDefaults } from '../features/content/defaults';
+import { isLeadership } from '../features/content/content';
 import { FiArrowRight, FiCheck } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import PageHero from '../components/ui/PageHero';
@@ -9,7 +13,10 @@ const values = [
   { title: 'Keep the student involved', text: 'The strongest decision is one a student understands and feels ownership of.' },
 ];
 
-const AboutPage = () => (
+const AboutPage = () => {
+ const { items: members } = useContent('team', teamDefaults);
+ const founder = members.find(isLeadership);
+ return (
   <>
     <PageHero variant="about" eyebrow="About Career Valley" title="Guidance built around the person—not just the programme." description="Career Valley was founded to help students navigate education choices with more clarity, context and confidence.">
       <Link to="/contact_us" className="button button-primary">Meet with a counsellor <FiArrowRight /></Link>
@@ -19,9 +26,10 @@ const AboutPage = () => (
 
     <section className="section surface-muted"><div className="site-container"><SectionHeading eyebrow="How we work" title="Human guidance, practical next steps." description="Our role is to make a complex decision feel more structured, transparent and manageable." /><div className="mt-12 grid gap-5 lg:grid-cols-3">{values.map((value) => <article key={value.title} className="card p-7"><span className="grid h-10 w-10 place-items-center rounded-xl bg-[var(--color-primary-soft)] text-[var(--color-primary)]"><FiCheck /></span><h3 className="mt-8 text-xl font-bold">{value.title}</h3><p className="mt-3 text-sm leading-7 text-[var(--color-muted)]">{value.text}</p></article>)}</div></div></section>
 
-    <section className="section"><div className="site-container grid items-center gap-12 lg:grid-cols-[.7fr_1.3fr]"><div className="mx-auto w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] bg-[#e5eee9]"><img src="https://res.cloudinary.com/du3i8e0se/image/upload/v1721847900/qkvrjqtsook5wjnzbzwb.jpg" alt="Divya Rupainwar, founder and CEO of Career Valley" width="500" height="620" loading="lazy" className="aspect-[4/5] w-full object-cover" /></div><div><span className="eyebrow">Founder & CEO</span><h2 className="section-title">Divya Rupainwar</h2><blockquote className="max-w-3xl text-xl leading-9 text-[var(--color-muted)]">“Education is about growing your mind, discovering your passion and having the courage to forge your own path. Every student should feel like the architect of their own future.”</blockquote><div className="mt-8 flex flex-wrap gap-3"><Link to="/experts" className="button button-secondary">Meet our experts</Link><a href="mailto:divya@thecareervalley.com" className="button button-primary">Contact Divya</a></div></div></div></section>
+    {founder && <section className="section"><div className="site-container grid items-center gap-12 lg:grid-cols-[.7fr_1.3fr]"><div className="mx-auto w-full max-w-sm overflow-hidden rounded-[var(--radius-lg)] bg-[var(--color-primary-soft)]"><img src={founder.photo} alt={founder.name} width="500" height="620" loading="lazy" className="aspect-[4/5] w-full object-cover" /></div><div><span className="eyebrow">{founder.role}</span><h2 className="section-title">{founder.name}</h2><LinkedInLink href={founder.linkedin} name={founder.name} /><blockquote className="max-w-3xl text-xl leading-9 text-[var(--color-muted)]">{founder.bio}</blockquote><div className="mt-8 flex flex-wrap gap-3"><Link to="/experts" className="button button-secondary">Meet our experts</Link>{founder.email && <a href={`mailto:${founder.email}`} className="button button-primary">Contact {founder.name.split(' ')[0]}</a>}</div></div></div></section>}
 
-    <section className="section-compact bg-[var(--color-primary)] text-white"><div className="site-container flex flex-col justify-between gap-7 md:flex-row md:items-center"><div><p className="text-sm font-bold uppercase tracking-widest text-white/60">Looking ahead</p><h2 className="mt-2 max-w-2xl text-3xl font-bold tracking-tight">Continuing to make educational decisions easier to understand.</h2></div><Link to="/services" className="button shrink-0 bg-white text-[var(--color-primary)]">Explore our services <FiArrowRight /></Link></div></section>
+    <section className="section-compact bg-[var(--color-accent-soft)] text-[var(--color-foreground)]"><div className="site-container flex flex-col justify-between gap-7 md:flex-row md:items-center"><div><p className="text-sm font-bold uppercase tracking-widest text-[var(--color-muted)]">Looking ahead</p><h2 className="mt-2 max-w-2xl text-3xl font-bold tracking-tight">Continuing to make educational decisions easier to understand.</h2></div><Link to="/services" className="button button-primary shrink-0">Explore our services <FiArrowRight /></Link></div></section>
   </>
 );
+};
 export default AboutPage;

@@ -1,0 +1,20 @@
+{
+  "submissionId": "f33a1450-c39f-422a-9cf4-8fe8752e564a",
+  "submission": {
+    "status": 200,
+    "success": true
+  },
+  "duplicate": {
+    "status": 200,
+    "success": true
+  },
+  "invalid": {
+    "status": 400,
+    "error": "Please enter a valid email address."
+  },
+  "anonymousSync": {
+    "status": 401,
+    "error": "Sign in as an administrator."
+  },
+  "anonymousReadStatus": 401
+}

@@ -18,7 +18,7 @@ const filterLabels = {
 
 const ExploreCityPage = () => {
   const params = new URLSearchParams(useLocation().search);
-  const city = params.get('city') || '';
+  const [city, setCity] = useState(params.get('city') || '');
   const initialProgram = params.get('programType') || '';
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState({
@@ -37,10 +37,10 @@ const ExploreCityPage = () => {
     ));
   }), [city, filters, search]);
 
-  const activeFilterCount = Object.values(filters).filter(Boolean).length + (search ? 1 : 0);
+  const activeFilterCount = Object.values(filters).filter(Boolean).length + (search ? 1 : 0) + (city ? 1 : 0);
   const update = (event) => setFilters((value) => ({ ...value, [event.target.name]: event.target.value }));
   const clearFilters = () => {
-    setSearch('');
+    setSearch(''); setCity('');
     setFilters({ programType: '', course: '', collegeType: '', stream: '' });
   };
 
@@ -92,6 +92,7 @@ const ExploreCityPage = () => {
                 </span>
               </label>
 
+              <label className="field"><span>City</span><select value={city} onChange={event=>setCity(event.target.value)}><option value="">All cities</option>{[...new Set(collegesData.map(college=>college.city).filter(Boolean))].sort().map(value=><option key={value} value={value}>{value}</option>)}</select></label>
               <label className="field">
                 <span>Programme</span>
                 <select name="programType" value={filters.programType} onChange={update}>
@@ -156,7 +157,6 @@ const ExploreCityPage = () => {
                     <dl className="mt-6 grid grid-cols-2 gap-x-4 gap-y-5 border-t border-[var(--color-border)] pt-5 text-sm">
                       <div><dt className="text-[var(--color-muted)]">Course</dt><dd className="mt-1 font-semibold">{college.course}</dd></div>
                       <div><dt className="text-[var(--color-muted)]">Duration</dt><dd className="mt-1 font-semibold">{college.duration}</dd></div>
-                      <div><dt className="text-[var(--color-muted)]">Fees</dt><dd className="mt-1 font-semibold">{college.fees}</dd></div>
                       <div><dt className="text-[var(--color-muted)]">Type</dt><dd className="mt-1 font-semibold">{college.collegeType}</dd></div>
                     </dl>
 

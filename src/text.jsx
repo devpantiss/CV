@@ -4,8 +4,8 @@ const EventRegistrationConfirmation = ({ user, event, formattedDate }) => {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', maxWidth: '600px', margin: '0 auto', padding: '30px', boxSizing: 'border-box', backgroundColor: '#ffffff', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
       <img
-        src="https://res.cloudinary.com/du3i8e0se/image/upload/v1722532332/CV_logo_yfndbw.png"
-        alt="Logo"
+        src="/career-valley-logo.png"
+        alt="The Career Valley"
         style={{ display: 'block', margin: '0 auto', width: '250px' }}
       />
       <div style={{ marginTop: '30px', textAlign: 'center', backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '10px', boxShadow: '0 0 10px rgba(0, 0, 0, 0.1)' }}>

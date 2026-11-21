@@ -1,0 +1,53 @@
+{
+  "contract": "contract.md: bright white/teal website corrections, landscape process, 13-city event calendar, compact pathways, original testimonials, team, city filtering and contact actions.",
+  "targetViewports": [
+    "1440x900",
+    "390x844"
+  ],
+  "accessibility": {
+    "status": "pass",
+    "evidence": "Native calendar dialog focused close control; Escape closed and restored opener focus, Tab advanced to Explore events. Guidance tabs changed with ArrowRight. City controls have visible labels. Calendar links have city-specific accessible names and 44px targets. Reduced-motion stylesheet disables process animation."
+  },
+  "responsive": {
+    "status": "pass",
+    "evidence": "Rendered at 1440x900 and 390x844. Body had no horizontal overflow; mobile calendar dialog scrollWidth equalled clientWidth. Desktop uses landscape process and two-column timetable, mobile stacks content."
+  },
+  "contentStates": {
+    "loading": {
+      "status": "pass",
+      "evidence": "Observed content placeholders and Loading status while live content requests were pending."
+    },
+    "empty": {
+      "status": "pass",
+      "evidence": "Unmatched college search displayed No colleges match these filters; Clear all filters restored 659 records."
+    },
+    "error": {
+      "status": "pass",
+      "evidence": "Live content request timed out; labelled saved-content fallback rendered with existing team, partners and testimonials. No indefinite spinner."
+    },
+    "partial": {
+      "status": "pass",
+      "evidence": "All announced calendar dates remain available independently of live content; missing event times are explicitly Time to be announced."
+    },
+    "success": {
+      "status": "pass",
+      "evidence": "Calendar opened with 13 entries; Hyderabad enquiry link populated its city and date in the contact form. Service card navigated to /events."
+    },
+    "permission": {
+      "status": "not-applicable",
+      "reason": "New calendar, service navigation and city filters are public read-only UI; no new permission or login boundary is introduced."
+    }
+  },
+  "renderedEvidence": [
+    {
+      "viewport": "1440x900",
+      "artifact": "banner-desktop.jpg",
+      "observation": "Desktop bright calendar banner with primary View event calendar action and first city/date."
+    },
+    {
+      "viewport": "390x844",
+      "artifact": "calendar-mobile.jpg",
+      "observation": "Mobile timetable dialog, wrapped venues and dates, accessible close control and no horizontal overflow."
+    }
+  ]
+}

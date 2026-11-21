@@ -1,0 +1,41 @@
+{
+  "keyboardFocus": {
+    "tag": "A",
+    "text": "Skip to main content",
+    "outline": "rgb(40, 100, 88) solid 3px",
+    "visible": true
+  },
+  "desktopMenuEscape": true,
+  "normalMotionPathway": {
+    "captured": true,
+    "background": "rgb(248, 249, 245)"
+  },
+  "explorer": {
+    "businessSelected": "true",
+    "courseLinks": [
+      "/courses/bba",
+      "/courses/bcom",
+      "/courses/mba"
+    ]
+  },
+  "mobileMenuEscape": true,
+  "mobileFocusRestored": true,
+  "eventStates": {
+    "loading": {
+      "visible": true,
+      "source": "locally mocked API response"
+    },
+    "empty": {
+      "visible": true,
+      "source": "locally mocked API response"
+    },
+    "error": {
+      "visible": true,
+      "source": "locally mocked API response"
+    }
+  },
+  "footer": {
+    "background": "rgb(237, 242, 235)",
+    "color": "rgb(32, 59, 51)"
+  }
+}
