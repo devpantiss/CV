@@ -2,16 +2,15 @@ import { useState } from 'react';
 import { FiArrowRight, FiCheck, FiChevronDown, FiCompass } from 'react-icons/fi';
 import ConsultationModal from '../ConsultationModal';
 import HeroMedia from '../../ui/HeroMedia';
+import PartnerLogo from '../../../features/partners/PartnerLogo';
+import { partnerDefaults } from '../../../features/partners/defaults';
 
-const logos = [
-  ['https://www.isbr.in/assets/images/ISBRlogo.png', 'ISBR'],
-  ['https://liet.in/images/lloyd_eng/website/img/logo/liet_engineering_1.png', 'Lloyd Institute'],
-  ['https://i.postimg.cc/Gt874RDP/accurate-logo-removebg-preview.png', 'Accurate Institute'],
-  ['https://www.nicmar.ac.in/uploads/NICMAR-Hyderabad-Logo-01.png', 'NICMAR Hyderabad'],
-  ['https://www.vishwavishwani.ac.in/assets/img/vvism1.png', 'Vishwa Vishwani'],
-  ['https://i.postimg.cc/HkBRSX5j/gitam-new-logo-removebg-preview.png', 'GITAM'],
-  ['https://dl.geu.ac.in/uploads/image/KWqx6liP-geu-logo.webp', 'Graphic Era University'],
+const logoNames = [
+  'ISBR Business School', 'Lloyd Institute', 'Accurate Institute',
+  'NICMAR University', 'Vishwa Vishwani Institute of Systems & Management',
+  'GITAM', 'Graphic Era University',
 ];
+const logos = logoNames.map(name => partnerDefaults.find(partner => partner.name === name));
 
 // React 18 forwards the browser priority hint using its lowercase attribute name.
 const Banner = () => {
@@ -29,8 +28,14 @@ const Banner = () => {
           <div className="mt-8 flex flex-wrap gap-x-7 gap-y-3 text-sm font-semibold text-[var(--color-muted)]"><span className="flex items-center gap-2"><FiCheck className="text-[var(--color-primary)]" />Personal guidance</span><span className="flex items-center gap-2"><FiCheck className="text-[var(--color-primary)]" />UG & PG pathways</span><span className="flex items-center gap-2"><FiCheck className="text-[var(--color-primary)]" />Parents welcome</span></div>
 
           <div className="mt-10 max-w-3xl rounded-[1.35rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[var(--shadow-md)] backdrop-blur-xl">
-            <p className="px-2 pb-3 text-[10px] font-extrabold uppercase tracking-[.18em] text-[var(--color-muted)]">Universities attended by students we have supported</p>
-            <div className="hero-logo-window"><div className="hero-logo-track">{[...logos, ...logos].map(([src, alt], index) => <span className="hero-logo" key={`${alt}-${index}`}><img src={src} alt={index < logos.length ? alt : ''} width="120" height="42" loading={index < 4 ? 'eager' : 'lazy'} /></span>)}</div></div>
+            <p className="px-2 pb-4 text-xs font-semibold leading-5 text-[var(--color-muted)]">Universities attended by students we have supported</p>
+            <div className="hero-logo-window" role="region" aria-label="Universities attended by supported students" tabIndex={0}>
+              <div className="hero-logo-track">{[...logos, ...logos].map((partner, index) => (
+                <div className="hero-logo" key={`${partner.name}-${index}`} aria-hidden={index >= logos.length ? true : undefined}>
+                  <PartnerLogo partner={partner} />
+                </div>
+              ))}</div>
+            </div>
           </div>
         </div>
       </div>

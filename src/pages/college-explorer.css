@@ -1,0 +1,115 @@
+.college-explorer-layout {
+  display: grid;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.college-filters {
+  min-width: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 1.5rem;
+  background: var(--color-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.college-filters-header {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  padding: 1.125rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.college-filters-icon {
+  display: grid;
+  flex: 0 0 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border-radius: .85rem;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.college-filters-heading { flex: 1; min-width: 0; }
+.college-filters-heading h2 { font-size: .9375rem; font-weight: 650; line-height: 1.4; }
+.college-filters-heading p { margin-top: .2rem; font-size: .75rem; color: var(--color-muted); }
+.college-filters-reset {
+  min-height: 2.75rem;
+  padding: .5rem .25rem;
+  color: var(--color-primary);
+  font-size: .8125rem;
+  font-weight: 600;
+  border-radius: .5rem;
+}
+.college-filters-reset:hover:not(:disabled) { text-decoration: underline; text-underline-offset: 4px; }
+.college-filters-reset:disabled { color: var(--color-muted); opacity: .55; cursor: default; }
+
+.college-filters-fields { display: grid; gap: .875rem; padding: 1.125rem; }
+.college-filter-field { display: grid; min-width: 0; gap: .5rem; }
+.college-filter-field > span:first-child { font-size: .8125rem; font-weight: 600; line-height: 1.5; color: var(--color-foreground); }
+.college-filter-control { position: relative; display: block; min-width: 0; }
+.college-filter-control input,
+.college-filter-control select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 2.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: .75rem;
+  padding: 0 .875rem;
+  background: var(--color-surface);
+  color: var(--color-foreground);
+  font: inherit;
+  font-size: .875rem;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+.college-filter-control select { appearance: none; padding-right: 2.5rem; text-overflow: ellipsis; cursor: pointer; }
+.college-filter-control select[data-active="false"],
+.college-filter-control input::placeholder { color: var(--color-muted); opacity: 1; }
+.college-filter-control input { padding-left: 2.5rem; }
+.college-filter-control input:hover,
+.college-filter-control select:hover { border-color: var(--color-muted); }
+.college-filter-control input:focus,
+.college-filter-control select:focus { outline: 2px solid var(--color-primary); outline-offset: 3px; border-color: var(--color-primary); }
+.college-filter-search-icon,
+.college-filter-chevron { position: absolute; top: 50%; transform: translateY(-50%); width: 1rem; height: 1rem; pointer-events: none; color: var(--color-muted); }
+.college-filter-search-icon { left: .875rem; }
+.college-filter-chevron { right: .875rem; }
+.college-filters-footer { display: flex; align-items: center; gap: .5rem; padding: 1rem 1.5rem; border-top: 1px solid var(--color-border); font-size: .75rem; color: var(--color-muted); }
+.college-filters-status { width: .375rem; height: .375rem; flex-shrink: 0; border-radius: 50%; background: var(--color-success); }
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .college-filters-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .college-filter-search { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .college-explorer-layout { grid-template-columns: 280px minmax(0, 1fr); }
+  .college-filters {
+    position: sticky;
+    top: 7rem;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100dvh - 8rem);
+  }
+  .college-filters-header, .college-filters-footer { flex-shrink: 0; }
+  .college-filters-fields { min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; }
+  .college-filters-fields:focus-within { scroll-padding-block: .5rem; }
+}
+@media (max-width: 359px) {
+  .college-filters-header, .college-filters-fields { padding: 1.125rem; }
+  .college-filters-footer { padding-inline: 1.125rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .college-filter-control input, .college-filter-control select { transition: none; }
+}
+
+.college-results-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.college-result-card { min-width: 0; padding: 1.125rem; border-radius: 1.125rem; }
+.college-result-card h3 { overflow-wrap: anywhere; }
+.college-result-card dd { overflow-wrap: anywhere; }
+@media (min-width: 640px) {
+  .college-results-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1280px) {
+  .college-results-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
